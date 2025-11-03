@@ -12,7 +12,9 @@ body {
 }
 html, body {
     
-    height: 3000px;     /* set total page height */
+    width: 100%;       /* flexible width */
+    max-width: 2000px; /* maximum width */
+    height: auto;     /* set total page height */
 }
 
 /* Container */
@@ -72,10 +74,12 @@ nav {
     top: 70px;       /* distance from top of hero */
     left: 50px;      /* distance from left of hero */
     color: #091747;
-    width: 600px;
-    height: 128px;
+    width: 80%;       /* flexible width */
+    max-width: 1700px; /* maximum width */
+    height: auto; 
     font-size: 48px;
     text-align: left;
+
 }
 .hero h3 {
     position: absolute;
@@ -102,7 +106,29 @@ nav {
             /* optional */
 }
 
-
+@media (max-width: 768px) {
+    .hero h2, .hero h3 {
+        position: static; /* reset to normal flow */
+        text-align: center;
+        font-size: 1.5rem;   /* smaller heading on mobile */
+        width: 95%;
+    }
+    .nature-logo {
+        position: static; /* reset to normal flow */
+        float: none;
+        display: block;
+        margin: 20px auto; /* center the image */
+    }
+    nav {
+        position: static; /* reset to normal flow */
+        text-align: center;
+        padding: 1rem 0;   /* optional spacing */
+    }
+    .nav-links {  
+        flex-direction: column; /* stack links vertically */
+        gap: 1rem;              /* space between links */
+    }
+}
 
 
 .btn-primary:hover {
