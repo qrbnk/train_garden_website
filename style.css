@@ -10,6 +10,10 @@ body {
   line-height: 1.6;
   color: #333;
 }
+html, body {
+    
+    height: 3000px;     /* set total page height */
+}
 
 /* Container */
 .container {
@@ -21,63 +25,84 @@ body {
 /* Header */
 .site-header {
   background: #fff;
-  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.logo {
-  font-weight: bold;
-  color: #0077cc;
+nav {
+    position: absolute;   /* allows you to place nav anywhere */
+    top: 0;               /* distance from top of page */
+    right: 0;             /* distance from right of page */
+    padding: 1rem 2rem;   /* optional spacing from edges */
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;          /* space between links */
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #0077cc;
-}
 
+.logo-image {
+    width: 133px;       /* Set width */
+    height: 23;       /* Maintain aspect ratio */
+    display: block;     /* Optional: block element */
+    margin-left: 50px;   
+    margin-top: 10px;  
+}
 /* Hero Section */
 .hero {
-  background: linear-gradient(120deg, #0077cc, #00b7a8);
   color: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
 
-.hero h2 {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+.hero {
+    position: relative; /* parent must be relative for absolute positioning */
 }
 
-.btn-primary {
-  background: #fff;
-  color: #0077cc;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+.hero h2 {
+    position: absolute;
+    top: 70px;       /* distance from top of hero */
+    left: 50px;      /* distance from left of hero */
+    color: #091747;
+    width: 600px;
+    height: 128px;
+    font-size: 48px;
+    text-align: left;
 }
+.hero h3 {
+    position: absolute;
+    top: 300px;       /* distance from top of hero */
+    left: 50px;      /* distance from left of hero */
+    color: #091747;
+    width: 600px;
+    height: 128px;
+    font-size: 24px;
+    text-align: left;
+}
+
+
+.nature-logo {
+    width: 593px;
+    height: 393px;                  /* fixed units! */
+    display: block;   
+    float: right;       /* moves image to the right */
+    margin: 10px;   
+    position: absolute;   /* allows you to place nav anywhere */
+    top: 70px;               /* distance from top of page */
+    right: 50px;
+            /* optional */
+}
+
+
+
 
 .btn-primary:hover {
   background: #f4f4f4;
@@ -90,4 +115,5 @@ body {
   background: #f8f8f8;
   color: #777;
   font-size: 0.9rem;
+  float: bottom;
 }
