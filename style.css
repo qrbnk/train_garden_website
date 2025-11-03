@@ -90,8 +90,9 @@ nav {
 
 
 .nature-logo {
-    width: 593px;
-    height: 393px;                  /* fixed units! */
+    width: 80%;       /* flexible width */
+    max-width: 593px; /* maximum width */
+    height: auto;                 /* fixed units! */
     display: block;   
     float: right;       /* moves image to the right */
     margin: 10px;   
