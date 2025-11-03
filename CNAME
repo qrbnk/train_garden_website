@@ -1,0 +1,4 @@
+traingarden.co.uk
+  git add CNAME
+git commit -m "Add custom domain for GitHub Pages"
+git push origin main
