@@ -72,13 +72,6 @@ html, body {
     margin-top: 10px;  
 }
 
-.skills-logo {
-    width: 1200px;       /* Set width */
-    height: 488;       /* Maintain aspect ratio */
-    display: block;     /* Optional: block element */
-    margin-left: 200px;   
-    margin-top: 10px;  
-}
 /* Hero Section */
 .hero {
   color: #fff;
@@ -156,10 +149,7 @@ html, body {
     width: 120px;
   }
 
-  .skills-logo {
-    margin: 0 auto 1rem auto; /* center logo */
-    width: 120px;
-  }
+ 
 
   nav {
     width: 100%;
@@ -214,11 +204,11 @@ html, body {
   }
 
 .skills-logo {
-     width: 90%;
+     position: static;
+    width: 90%;
     max-width: 400px;
     margin: 0.5rem auto;
     display: block;
-  }
   }
 
   /* FOOTER */
