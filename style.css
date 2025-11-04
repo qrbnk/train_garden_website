@@ -35,9 +35,9 @@ html, body {
 
 .site-header {
   display: flex;
-  justify-content: space-between; /* logo left, nav right */
-  align-items: center;            /* vertically center items */
-  padding: 0rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 /* Ensure nav links are in a row */
@@ -45,8 +45,7 @@ html, body {
   display: flex;
   list-style: none;
   gap: 1.5rem; /* space between links */
-  margin-right: 50px; /* small spacing from right edge */
-  margin-top: 10px;
+  margin:0
 }
 
 /* Make links look nice */
@@ -68,19 +67,17 @@ html, body {
     width: 133px;       /* Set width */
     height: 23;       /* Maintain aspect ratio */
     display: block;     /* Optional: block element */
-    margin-left: 50px;   
-    margin-top: 10px;  
+    margin: 0;         /* Optional: remove default margin */
 }
 
 /* Hero Section */
 .hero {
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 6rem 2rem;
-}
-
-.hero {
-    position: relative; /* parent must be relative for absolute positioning */
 }
 
 .hero h2 {
@@ -131,7 +128,12 @@ html, body {
     left: 200px;
             /* optional */
 }
-
+.hero-images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* so it stacks on mobile */
+  gap: 1rem;
+}
 /* Basic centering */
 .center-container {
   display: flex;
@@ -216,39 +218,20 @@ html, body {
   }
 
   /* HERO SECTION */
+  @media(min-width: 768px){
   .hero {
-    padding: 4rem 1rem;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
   }
-
-    .nature-logo {
-    position: static;
-    width: 90%;
-    max-width: 400px;
-    margin: 0.5rem auto;
-    display: block;
+  .hero-text {
+    max-width: 600px;
   }
-  .hero h2,
-  .hero h3 {
-    position: static; /* remove absolute positioning */
-    width: 100%;
-    text-align: center;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+  .hero-images img {
+    max-width: 300px;
   }
-
-  .hero h3 {
-    font-size: 1rem;
-    color: #091747;
-  }
-
-.skills-logo {
-     position: static;
-    width: 90%;
-    max-width: 400px;
-    margin: 0.5rem auto;
-    display: block;
-  }
+}
 
   /* FOOTER */
   .site-footer {
