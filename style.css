@@ -199,37 +199,45 @@ body {
   width: 60%;
 }
 
-/* Services images section */
-.services-image {
-  width: 45%;           /* make each image take up half of the space */
-  max-width: 500px;     /* prevent them from being too large */
-  height: auto;
-  border-radius: 12px;  /* soft rounded corners */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  margin: 1rem;
+/* ===== SERVICES IMAGES ===== */
+.services-section {
+  display: flex;
+  flex-wrap: wrap;          /* allows stacking on smaller screens */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: #f8f8f8;
 }
 
-/* Hover effect for a bit of interactivity */
+.services-image {
+  width: 100%;
+  max-width: 400px;          /* default size */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  margin: 0 auto;
+}
+
+/* Hover effect */
 .services-image:hover {
   transform: scale(1.05);
   opacity: 0.95;
 }
 
-/* Container for services images */
-.services-section {
-  display: flex;
-  flex-wrap: wrap;       /* allows images to stack on small screens */
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 3rem 1rem;
-  background-color: #f8f8f8; /* light background for contrast */
+/* Tablet screens */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .services-image {
+    width: 45%;              /* two per row */
+    max-width: 350px;
+  }
 }
 
-.services-image {
-  width: 60vw; /* 60% of the viewport width */
-  max-width: 700px;
-  min-width: 250px;
-  height: auto;
+/* Desktop screens */
+@media (min-width: 1025px) {
+  .services-image {
+    width: 100%;              /* slightly smaller for balance */
+    max-width: 1700px;
+  }
 }
