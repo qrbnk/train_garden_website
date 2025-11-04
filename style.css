@@ -82,11 +82,16 @@ body {
   justify-content: center;
 }
 
-/* ===== HERO LOGO ===== */
-.skills-logo {
-  width: clamp(300px, 50%, 1000px); /* scales from 300px up to 1000px */
-  height: auto;
-  transition: all 0.5s ease;
+//* ===== HERO LOGO GRID ===== */
+.hero-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* min width 300px, auto-fit columns */
+  gap: 2rem;                  /* space between logos */
+  justify-items: center;       /* center each logo in its column */
+  align-items: center;         /* vertically center logos if row height changes */
+  width: 100%;                 /* full width container */
+  max-width: 1200px;           /* optional max width */
+  margin-top: 2rem;            /* spacing below hero text */
 }
 
 @media (min-width: 1200px) {
