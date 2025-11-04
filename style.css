@@ -227,23 +227,9 @@ body {
   background-color: #f8f8f8; /* light background for contrast */
 }
 
-/* Optional: make them stack on mobile */
-@media (max-width: 768px) {
-  .services-image {
-    width: 90%;
-  }
-}
-.services-image.small {
-  width: 30%;
-  max-width: 300px;
-}
-
-.services-image.medium {
-  width: 45%;
-  max-width: 500px;
-}
-
-.services-image.large {
-  width: 60%;
-  max-width: 1700px;
+.services-image {
+  width: 60vw; /* 60% of the viewport width */
+  max-width: 700px;
+  min-width: 250px;
+  height: auto;
 }
