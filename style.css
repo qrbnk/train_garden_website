@@ -82,27 +82,22 @@ body {
   justify-content: center;
 }
 
-//* ===== HERO LOGO GRID ===== */
+/* ===== HERO LOGO GRID ===== */
 .hero-logos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* min width 300px, auto-fit columns */
-  gap: 2rem;                  /* space between logos */
-  justify-items: center;       /* center each logo in its column */
-  align-items: center;         /* vertically center logos if row height changes */
-  width: 100%;                 /* full width container */
-  max-width: 1200px;           /* optional max width */
-  margin-top: 2rem;            /* spacing below hero text */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  width: 80%;
+  max-width: 768px;
+  margin-top: 2rem;
 }
 
-@media (min-width: 1200px) {
-  .skills-logo {
-    width: clamp(600px, 50%, 1400px);
-  }
-}
 /* Hide skills logo on screens smaller than 768px */
 @media (max-width: 768px) {
   .skills-logo {
-    display: none;
+    display: none !important; /* add !important to override other rules */
   }
 }
 /* ===== SERVICES ===== */
