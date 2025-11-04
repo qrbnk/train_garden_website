@@ -213,7 +213,10 @@ html, body {
     color: #091747;
   }
 
-
+.skills-logo {
+    margin: 0 auto 1rem auto; /* center logo */
+    width: 120px;
+  }
 
   /* FOOTER */
   .site-footer {
