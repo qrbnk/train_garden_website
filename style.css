@@ -198,3 +198,52 @@ body {
 .footer-logo.large {
   width: 60%;
 }
+
+/* Services images section */
+.services-image {
+  width: 45%;           /* make each image take up half of the space */
+  max-width: 500px;     /* prevent them from being too large */
+  height: auto;
+  border-radius: 12px;  /* soft rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  margin: 1rem;
+}
+
+/* Hover effect for a bit of interactivity */
+.services-image:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+/* Container for services images */
+.services-section {
+  display: flex;
+  flex-wrap: wrap;       /* allows images to stack on small screens */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  background-color: #f8f8f8; /* light background for contrast */
+}
+
+/* Optional: make them stack on mobile */
+@media (max-width: 768px) {
+  .services-image {
+    width: 90%;
+  }
+}
+.services-image.small {
+  width: 30%;
+  max-width: 300px;
+}
+
+.services-image.medium {
+  width: 45%;
+  max-width: 500px;
+}
+
+.services-image.large {
+  width: 100%;
+  max-width: 1700px;
+}

@@ -34,7 +34,10 @@
   <div class="hero-image-center center">
     <img src="empower-skills.png" alt="Skills Logo" class="skills-logo">
   </div>
-
+<section class="services-section">
+  <img src="our-services-1.png" alt="Our Services Image 1" class="services-image img1">
+  <img src="our-services-2.png" alt="Our Services Image 2" class="services-image img2">
+</section>
 </section>
 
   <!-- Footer -->
@@ -69,5 +72,21 @@
 
     // Footer
     moveElement('.footer-center', 'center');
+  });
+</script>
+<script>
+  // Reusable resize function for any element(s)
+  function resizeElements(selector, size) {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(el => {
+      el.classList.remove('small', 'medium', 'large');
+      el.classList.add(size);
+    });
+  }
+
+  // When page loads
+  document.addEventListener("DOMContentLoaded", () => {
+    // Make both service images large by default
+    resizeElements('.services-image', 'large');
   });
 </script>
