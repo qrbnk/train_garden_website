@@ -167,6 +167,13 @@ html, body {
     text-align: center;
   }
 
+    .nature-logo {
+    position: static;
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: block;
+  }
   .hero h2,
   .hero h3 {
     position: static; /* remove absolute positioning */
@@ -181,13 +188,7 @@ html, body {
     color: #091747;
   }
 
-  .nature-logo {
-    position: static;
-    width: 90%;
-    max-width: 400px;
-    margin: 2rem auto;
-    display: block;
-  }
+
 
   /* FOOTER */
   .site-footer {
