@@ -1,4 +1,4 @@
-/* Basic reset */
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -82,11 +82,26 @@ body {
   justify-content: center;
 }
 
+/* ===== SKILLS LOGO ===== */
+/* Mobile first */
 .skills-logo {
-  width: 60%;
-  max-width: 700px;
+  width: clamp(250px, 60%, 500px); /* min 250px, scales up to 500px on mobile */
   height: auto;
   transition: all 0.5s ease;
+}
+
+/* Laptops / desktops */
+@media (min-width: 769px) {
+  .skills-logo {
+    width: clamp(400px, 80%, 1700px); /* min 400px, scales up to 800px */
+  }
+}
+
+/* Ultra-wide desktops */
+@media (min-width: 1200px) {
+  .skills-logo {
+    width: clamp(500px, 40%, 1000px); /* min 500px, scales up to 1000px */
+  }
 }
 
 /* ===== SERVICES ===== */
@@ -104,21 +119,19 @@ body {
 /* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
-  gap: 2.5rem;                          /* space between items */
-  justify-items: center;                 /* center each item horizontally */
-  align-items: start;                    /* align items vertically at top */
-  justify-content: center;               /* center the whole grid inside container */
-  max-width: 1200px;                     /* optional: limit total width */
-  margin: 0 auto;                        /* center the grid in container */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-/* Service Item */
 .service-item {
   display: flex;
   flex-direction: column;
-  align-items: center;                  /* center image + text inside each item */
+  align-items: center;
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -128,9 +141,9 @@ body {
 }
 
 .services-image {
-  width: clamp(300px, 25vw, 400px);   /* increase min & max width */
-  aspect-ratio: 312 / 209;            /* keep the aspect ratio */
-  object-fit: contain;                /* ensure full image shows */
+  width: clamp(250px, 25vw, 400px);
+  aspect-ratio: 312 / 209;
+  object-fit: contain;
   margin-bottom: 1rem;
   transition: transform 0.3s ease, width 0.3s ease;
 }
@@ -144,7 +157,7 @@ body {
 }
 
 .services-image.large {
-  width: clamp(350px, 28vw, 450px);   /* for “large” class (JS controlled) */
+  width: clamp(300px, 30vw, 450px);
 }
 
 .service-item p {
@@ -153,7 +166,7 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer-center {
   display: flex;
   justify-content: center;
@@ -181,15 +194,16 @@ body {
   .hero-text h3 {
     font-size: 1.5rem;
   }
-
-  .skills-logo {
-    max-width: 700px;
-  }
 }
 
+/* Mobile / Tablet adjustments for services */
 @media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* stack images */
+  }
+
   .services-image {
-    width: clamp(220px, 40vw, 300px); /* scaled down for smaller screens */
+    width: clamp(280px, 50vw, 350px);
   }
 
   .services-image.small {
@@ -202,7 +216,7 @@ body {
     max-width: 300px;
   }
 
-    .services-image.large {
-    width: clamp(260px, 45vw, 350px);
+  .services-image.large {
+    width: clamp(300px, 55vw, 400px);
   }
 }
