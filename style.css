@@ -104,11 +104,12 @@ body {
     flex-direction: row;
     gap: 1.5rem;
   }
+}
 
- @media (min-width: 769px) {
+@media (min-width: 769px) {
   .hero {
-    flex-direction: column; /* stack text + logo vertically */
-    align-items: center;    /* center everything */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
     padding: 6rem 2rem;
   }
@@ -122,26 +123,78 @@ body {
   }
 
   .skills-logo {
-    width: 60%;        /* make bigger on desktop */
-    max-width: 700px;  /* limit max width */
+    width: 60%; 
+    max-width: 700px;
   }
 }
 /* Skills logo container */
+
 .hero-image-center {
   width: 100%;
   display: flex;
-  justify-content: center; /* horizontal centering */
+  transition: all 0.5s ease;
 }
 
+.hero-image-center.left { justify-content: flex-start; }
+.hero-image-center.center { justify-content: center; }
+.hero-image-center.right { justify-content: flex-end; }
+
 .skills-logo {
-  width: 90%;         /* mobile: almost full width */
-  max-width: 500px;   /* max size */
+  width: 60%;
+  max-width: 700px;
   height: auto;
-  display: block;
+  transition: all 0.5s ease;
 }
-site-footer {
-  background: #f4f4f4;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-} 
+
+.skills-logo.small {
+  width: 40%;
+  max-width: 400px;
+}
+
+.skills-logo.medium {
+  width: 60%;
+  max-width: 700px;
+}
+
+.skills-logo.large {
+  width: 100%;
+  max-width: 1700px;
+}
+
+/*Footer*/
+.footer-center {
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.footer-center.left {
+  justify-content: flex-start;
+}
+
+.footer-center.center {
+  justify-content: center;
+}
+
+.footer-center.right {
+  justify-content: flex-end;
+}
+
+.footer-logo {
+  width: 40%;
+  max-width: 300px;
+  height: auto;
+  transition: all 0.5s ease;
+}
+
+.footer-logo.small {
+  width: 25%;
+}
+
+.footer-logo.medium {
+  width: 40%;
+}
+
+.footer-logo.large {
+  width: 60%;
+}
