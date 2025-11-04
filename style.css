@@ -71,6 +71,14 @@ html, body {
     margin-left: 50px;   
     margin-top: 10px;  
 }
+
+.skills-logo {
+    width: 1200px;       /* Set width */
+    height: 488;       /* Maintain aspect ratio */
+    display: block;     /* Optional: block element */
+    margin-left: 200px;   
+    margin-top: 10px;  
+}
 /* Hero Section */
 .hero {
   color: #fff;
@@ -118,6 +126,18 @@ html, body {
     right: 50px;
             /* optional */
 }
+.skills-logo {
+    width: 80%;       /* flexible width */
+    max-width: 1200px; /* maximum width */
+    height: auto;                 /* fixed units! */
+    display: block;   
+    float: left;       /* moves image to the right */
+    margin: 10px;   
+    position: absolute;   /* allows you to place nav anywhere */
+    top: 500px;               /* distance from top of page */
+    left: 200px;
+            /* optional */
+}
 @media (max-width: 768px) {
   /* GENERAL PAGE PADDING */
   body {
@@ -132,6 +152,11 @@ html, body {
   }
 
   .logo-image {
+    margin: 0 auto 1rem auto; /* center logo */
+    width: 120px;
+  }
+
+  .skills-logo {
     margin: 0 auto 1rem auto; /* center logo */
     width: 120px;
   }
@@ -203,19 +228,9 @@ html, body {
   }
 }
 
-.btn-primary:hover {
-  background: #f4f4f4;
-}
 
-/* Footer */
-.site-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #f8f8f8;
-  color: #777;
-  font-size: 0.9rem;
-  float: bottom;
-}
+
+
 
 .map-section {
   text-align: center;
