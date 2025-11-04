@@ -99,7 +99,12 @@ body {
     width: clamp(600px, 50%, 1400px);
   }
 }
-
+/* Hide skills logo on screens smaller than 768px */
+@media (max-width: 768px) {
+  .skills-logo {
+    display: none;
+  }
+}
 /* ===== SERVICES ===== */
 .services {
   display: flex;
@@ -240,4 +245,21 @@ body {
   .services-image.large {
     width: clamp(300px, 55vw, 400px);
   }
+}
+.map-section {
+  text-align: center; /* centers heading & paragraph */
+  padding: 3rem 1rem;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;  /* centers the iframe horizontally */
+  margin-top: 2rem;
+}
+
+.map-container iframe {
+  width: 100%;            /* full width of container */
+  max-width: 800px;       /* max width for large screens */
+  height: 480px;          /* fixed height */
+  border: 0;              /* remove border */
 }
