@@ -118,29 +118,82 @@ html, body {
     right: 50px;
             /* optional */
 }
-
 @media (max-width: 768px) {
-    .hero h2, .hero h3 {
-        position: static; /* reset to normal flow */
-        text-align: center;
-        font-size: 1.5rem;   /* smaller heading on mobile */
-        width: 95%;
-    }
-    .nature-logo {
-        position: static; /* reset to normal flow */
-        float: none;
-        display: block;
-        margin: 20px auto; /* center the image */
-    }
-    nav {
-        position: static; /* reset to normal flow */
-        text-align: center;
-        padding: 1rem 0;   /* optional spacing */
-    }
-    .nav-links {  
-        flex-direction: column; /* stack links vertically */
-        gap: 1rem;              /* space between links */
-    }
+  /* GENERAL PAGE PADDING */
+  body {
+    padding: 0 1rem;
+  }
+
+  /* HEADER */
+  .site-header {
+    flex-direction: column; /* stack logo + nav vertically */
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .logo-image {
+    margin: 0 auto 1rem auto; /* center logo */
+    width: 120px;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* space between links */
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .nav-links a.cta {
+    background: #091747;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .hero h2,
+  .hero h3 {
+    position: static; /* remove absolute positioning */
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h3 {
+    font-size: 1rem;
+    color: #091747;
+  }
+
+  .nature-logo {
+    position: static;
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 1rem;
+  }
 }
 
 
