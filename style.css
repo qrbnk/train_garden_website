@@ -105,16 +105,12 @@ body {
     gap: 1.5rem;
   }
 
+ @media (min-width: 769px) {
   .hero {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    text-align: left;
+    flex-direction: column; /* stack text + logo vertically */
+    align-items: center;    /* center everything */
+    text-align: center;
     padding: 6rem 2rem;
-  }
-
-  .hero-text {
-    max-width: 600px;
   }
 
   .hero-text h2 {
@@ -125,13 +121,27 @@ body {
     font-size: 1.5rem;
   }
 
-  .hero-images {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .hero-images img {
-    width: 80%;
-    max-width: 300px;
+  .skills-logo {
+    width: 60%;        /* make bigger on desktop */
+    max-width: 700px;  /* limit max width */
   }
 }
+/* Skills logo container */
+.hero-image-center {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+}
+
+.skills-logo {
+  width: 90%;         /* mobile: almost full width */
+  max-width: 500px;   /* max size */
+  height: auto;
+  display: block;
+}
+site-footer {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+} 
