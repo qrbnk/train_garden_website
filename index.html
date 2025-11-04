@@ -22,21 +22,22 @@
   </header>
 
   <!-- Hero Section -->
-   <section class="hero container">
-  <div class="hero-text">
-    <h2>Grow Your Skills <br> With Train Garden</h2>
-    <h3>
-      Train Garden connects people with free opportunities to gain measurable skills
-      and match them with eco-conscious companies.
-    </h3>
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Grow Your Skills <br> With Train Garden</h2>
+      <h3>
+        Train Garden connects people with free opportunities <br>
+        to gain measurable skills <br>
+        and match them with eco-conscious companies.
+      </h3>
+    </div>
 
-  <div class="hero-image-center center">
-    <img src="empower-skills.png" alt="Skills Logo" class="skills-logo">
-    
-  </div>
-<!-- Services Section -->
-<section class="services container">
+    <div class="hero-image-center">
+      <img src="empower-skills.png" alt="Skills Logo" class="skills-logo">
+    </div>
+  </section>
+
+  <section class="services">
   <h2 class="section-title">Our Features</h2>
   <div class="services-grid">
     <div class="service-item">
@@ -55,57 +56,32 @@
       <img src="local-opportunities.png" alt="Local Opportunities" class="services-image">
     </div>
     <div class="service-item">
-      <img src="local-recruitment.png" class="services-image">
+      <img src="local-recruitment.png" alt="Local Recruitment" class="services-image">
     </div>
   </div>
 </section>
+
   <!-- Footer -->
-<footer class="site-footer footer-center center">    <p>© 2025 Train Garden</p>
+  <footer class="site-footer footer-center center">
+    <p>© 2025 Train Garden</p>
   </footer>
-  <!-- Your content above -->
 
- <script>
-  // Reusable function to move any element horizontally
-  function moveElement(selector, position) {
-    const container = document.querySelector(selector);
-    if (container) {
-      container.classList.remove('left', 'center', 'right');
-      container.classList.add(position);
+  <!-- Optional JS for Services hover/resize -->
+  <script>
+    // Resize services images dynamically if needed
+    function resizeElements(selector, size) {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        el.classList.remove('small', 'medium', 'large');
+        el.classList.add(size);
+      });
     }
-  }
 
-  // Reusable function to resize any image/logo
-  function resizeElement(selector, size) {
-    const element = document.querySelector(selector);
-    if (element) {
-      element.classList.remove('small', 'medium', 'large');
-      element.classList.add(size);
-    }
-  }
-
-  // Run when the page is fully loaded
-  document.addEventListener("DOMContentLoaded", () => {
-    // Hero logo
-    moveElement('.hero-image-center', 'center');
-    resizeElement('.skills-logo', 'large');
-
-    // Footer
-    moveElement('.footer-center', 'center');
-  });
-</script>
-<script>
-  // Reusable resize function for any element(s)
-  function resizeElements(selector, size) {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach(el => {
-      el.classList.remove('small', 'medium', 'large');
-      el.classList.add(size);
+    document.addEventListener("DOMContentLoaded", () => {
+      // Make all service images "large" by default
+      resizeElements('.services-image', 'large');
     });
-  }
+  </script>
 
-  // When page loads
-  document.addEventListener("DOMContentLoaded", () => {
-    // Make both service images large by default
-    resizeElements('.services-image', 'large');
-  });
-</script>
+</body>
+</html>

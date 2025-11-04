@@ -82,50 +82,45 @@ body {
   justify-content: center;
 }
 
-/* ===== SKILLS LOGO ===== */
-/* Mobile first */
+/* ===== HERO LOGO ===== */
 .skills-logo {
-  width: clamp(250px, 60%, 500px); /* min 250px, scales up to 500px on mobile */
+  width: clamp(300px, 50%, 1000px); /* scales from 300px up to 1000px */
   height: auto;
   transition: all 0.5s ease;
 }
 
-/* Laptops / desktops */
-@media (min-width: 769px) {
-  .skills-logo {
-    width: clamp(400px, 80%, 1700px); /* min 400px, scales up to 800px */
-  }
-}
-
-/* Ultra-wide desktops */
 @media (min-width: 1200px) {
   .skills-logo {
-    width: clamp(500px, 40%, 1000px); /* min 500px, scales up to 1000px */
+    width: clamp(600px, 50%, 1400px);
   }
 }
 
 /* ===== SERVICES ===== */
 .services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center title + grid horizontally */
   text-align: center;
   margin: 4rem 0;
+  width: 100%;
 }
 
 .section-title {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #2c3e50;
+  text-align: center;
 }
 
-/* Services Grid */
+/* Grid for services */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* flexible columns */
   gap: 2.5rem;
-  justify-items: center;
-  align-items: start;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-items: center;    /* center each service item horizontally */
+  align-items: start;       /* align rows at top */
+  width: 100%;
+  max-width: 1200px;        /* grid max width */
 }
 
 .service-item {
@@ -196,10 +191,9 @@ body {
   }
 }
 
-/* Mobile / Tablet adjustments for services */
 @media (max-width: 1024px) {
   .services-grid {
-    grid-template-columns: 1fr; /* stack images */
+    grid-template-columns: 1fr;
   }
 
   .services-image {
