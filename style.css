@@ -10,265 +10,128 @@ body {
   line-height: 1.6;
   color: #333;
 }
-html, body {
-    
-    width: 100%;       /* flexible width */
-    max-width: 2000px; /* maximum width */
-    height: auto;     /* set total page height */
-}
 
-/* Container */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 .site-header {
+  display: flex;
+  flex-direction: column; /* stack on mobile */
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
   background: #fff;
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
 }
 
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+.logo-image {
+  width: 120px;
+  height: auto;
 }
 
-/* Ensure nav links are in a row */
 .nav-links {
   display: flex;
+  flex-direction: column; /* stack links on mobile */
+  align-items: center;
+  gap: 1rem;
   list-style: none;
-  gap: 1.5rem; /* space between links */
-  margin:0
+  padding: 0;
 }
 
-/* Make links look nice */
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 0.5rem 1rem;
 }
 
 .nav-links a.cta {
   background: #091747;
   color: #fff;
-  padding: 0.4rem 0.4rem;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-
-.logo-image {
-    width: 133px;       /* Set width */
-    height: 23;       /* Maintain aspect ratio */
-    display: block;     /* Optional: block element */
-    margin: 0;         /* Optional: remove default margin */
-}
-
-/* Hero Section */
+/* ===== HERO ===== */
 .hero {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack text + images */
   align-items: center;
   gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   text-align: center;
 }
 
-.hero h2 {
-    position: absolute;
-    top: 70px;       /* distance from top of hero */
-    left: 50px;      /* distance from left of hero */
-    color: #091747;
-    width: 80%;       /* flexible width */
-    max-width: 1700px; /* maximum width */
-    height: auto; 
-    font-size: 48px;
-    text-align: left;
-
-}
-.hero h3 {
-    position: absolute;
-    top: 300px;       /* distance from top of hero */
-    left: 50px;      /* distance from left of hero */
-    color: #091747;
-    width: 600px;
-    height: 128px;
-    font-size: 24px;
-    text-align: left;
+.hero-text h2 {
+  font-size: 1.6rem;
+  color: #091747;
 }
 
+.hero-text h3 {
+  font-size: 1rem;
+  color: #091747;
+}
 
-.nature-logo {
-    width: 80%;       /* flexible width */
-    max-width: 593px; /* maximum width */
-    height: auto;                 /* fixed units! */
-    display: block;   
-    float: right;       /* moves image to the right */
-    margin: 10px;   
-    position: absolute;   /* allows you to place nav anywhere */
-    top: 70px;               /* distance from top of page */
-    right: 50px;
-            /* optional */
-}
-.skills-logo {
-    width: 80%;       /* flexible width */
-    max-width: 1200px; /* maximum width */
-    height: auto;                 /* fixed units! */
-    display: block;   
-    float: left;       /* moves image to the right */
-    margin: 10px;   
-    position: absolute;   /* allows you to place nav anywhere */
-    top: 500px;               /* distance from top of page */
-    left: 200px;
-            /* optional */
-}
 .hero-images {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* so it stacks on mobile */
+  flex-direction: column; /* stack images */
+  align-items: center;
   gap: 1rem;
 }
-/* Basic centering */
-.center-container {
-  display: flex;
-  flex-direction: column; /* stack elements vertically */
-  align-items: center;    /* horizontal centering */
-  text-align: center;     /* center text inside elements */
-  gap: 20px;              /* spacing between elements */
-  padding: 20px;          /* some padding around content */
-}
 
-/* Optional: button styling */
-.jobseekers-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0a1f4b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* Make images responsive */
-.hero-image, .services img {
-  max-width: 100%;
+.hero-images img {
+  width: 90%;
+  max-width: 400px;
   height: auto;
+  display: block;
 }
 
-/* Responsive tweaks for tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .center-container {
-    gap: 25px;
-    padding: 30px;
-  }
-  .jobseekers-btn {
-    font-size: 18px;
-    padding: 12px 24px;
-  }
-}
-@media (max-width: 768px) {
-  /* GENERAL PAGE PADDING */
-  body {
-    padding: 0 1rem;
-  }
-
-  /* HEADER */
+/* ===== DESKTOP / Larger Screens ===== */
+@media (min-width: 769px) {
   .site-header {
-    flex-direction: column; /* stack logo + nav vertically */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-  }
-
-  .logo-image {
-    margin: 0 auto 1rem auto; /* center logo */
-    width: 120px;
-  }
-
- 
-
-  nav {
-    width: 100%;
-    text-align: center;
+    padding: 1rem 2rem;
   }
 
   .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem; /* space between links */
-    margin: 0;
-    padding: 0;
+    flex-direction: row;
+    gap: 1.5rem;
   }
 
-  .nav-links a {
-    font-size: 1rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .nav-links a.cta {
-    background: #091747;
-    color: #fff;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-  }
-
-  /* HERO SECTION */
-  @media(min-width: 768px){
   .hero {
     flex-direction: row;
     justify-content: space-between;
-    text-align: left;
     align-items: flex-start;
+    text-align: left;
+    padding: 6rem 2rem;
   }
+
   .hero-text {
     max-width: 600px;
   }
+
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-images {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   .hero-images img {
+    width: 80%;
     max-width: 300px;
   }
-}
-
-  /* FOOTER */
-  .site-footer {
-    font-size: 0.85rem;
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .map-container iframe {
-    height: 50vh;
-  }
-}
-
-
-
-
-
-.map-section {
-  text-align: center;
-  padding: 4rem 1rem;
-  background-color: #f8f8f8;
-}
-
-.map-section h2 {
-  color: #091747;
-  margin-bottom: 1rem;
-}
-
-.map-section p {
-  color: #333;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 70vh; /* makes it 70% of the viewport height */
-  border: none;
 }
