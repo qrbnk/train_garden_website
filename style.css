@@ -29,25 +29,38 @@ html, body {
   background: #fff;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
-nav {
-    position: absolute;   /* allows you to place nav anywhere */
-    top: 0;               /* distance from top of page */
-    right: 0;             /* distance from right of page */
-    padding: 1rem 2rem;   /* optional spacing from edges */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* logo left, nav right */
+  align-items: center;            /* vertically center items */
+  padding: 0rem 1rem;
 }
 
+/* Ensure nav links are in a row */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;          /* space between links */
+  display: flex;
+  list-style: none;
+  gap: 1.5rem; /* space between links */
+  margin-right: 50px; /* small spacing from right edge */
+  margin-top: 10px;
 }
 
+/* Make links look nice */
 .nav-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a.cta {
+  background: #091747;
+  color: #fff;
+  padding: 0.4rem 0.4rem;
+  border-radius: 10px;
 }
 
 
