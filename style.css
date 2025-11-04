@@ -101,18 +101,25 @@ body {
   color: #2c3e50;
 }
 
+/* Services Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row on desktop */
+  gap: 2.5rem;                          /* space between items */
+  justify-items: center;                 /* center each item horizontally */
+  align-items: start;                    /* align items vertically at top */
+  justify-content: center;               /* center the whole grid inside container */
+  max-width: 1200px;                     /* optional: limit total width */
+  margin: 0 auto;                        /* center the grid in container */
 }
 
+
+/* Service Item */
 .service-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;                  /* center image + text inside each item */
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -121,9 +128,9 @@ body {
 }
 
 .services-image {
-  width: clamp(300px, 25vw, 400px);  /* larger minimum and maximum width */
-  aspect-ratio: 312 / 209;           /* keeps the 312x209 ratio */
-  object-fit: contain;               /* show full image without cropping */
+  width: clamp(300px, 25vw, 400px);   /* increase min & max width */
+  aspect-ratio: 312 / 209;            /* keep the aspect ratio */
+  object-fit: contain;                /* ensure full image shows */
   margin-bottom: 1rem;
   transition: transform 0.3s ease, width 0.3s ease;
 }
@@ -137,7 +144,7 @@ body {
 }
 
 .services-image.large {
-  width: clamp(300px, 25vw, 400px);
+  width: clamp(350px, 28vw, 450px);   /* for “large” class (JS controlled) */
 }
 
 .service-item p {
@@ -181,8 +188,8 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .services-image {
+    width: clamp(220px, 40vw, 300px); /* scaled down for smaller screens */
   }
 
   .services-image.small {
@@ -195,8 +202,7 @@ body {
     max-width: 300px;
   }
 
-  .services-image.large {
-    width: 100%;
-    max-width: 400px;
+    .services-image.large {
+    width: clamp(260px, 45vw, 350px);
   }
 }
