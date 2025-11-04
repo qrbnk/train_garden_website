@@ -172,7 +172,29 @@ body {
   justify-content: center;
   padding: 2rem 0;
 }
+.newsletter-section {
+  display: flex;                 /* use flexbox */
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically (optional if height is set) */
+  width: 100%;
+  margin: 3rem 0;                /* spacing above/below */
+}
 
+.newsletter-btn {
+  background-color: #091747;     /* blue color */
+  color: #fff;                   /* white text */
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #0d2255;     /* darker blue on hover */
+  transform: scale(1.05);
+}
 /* ===== MEDIA QUERIES ===== */
 @media (min-width: 769px) {
   .site-header {
