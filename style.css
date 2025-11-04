@@ -131,6 +131,45 @@ html, body {
     left: 200px;
             /* optional */
 }
+
+/* Basic centering */
+.center-container {
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  align-items: center;    /* horizontal centering */
+  text-align: center;     /* center text inside elements */
+  gap: 20px;              /* spacing between elements */
+  padding: 20px;          /* some padding around content */
+}
+
+/* Optional: button styling */
+.jobseekers-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0a1f4b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Make images responsive */
+.hero-image, .services img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive tweaks for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .center-container {
+    gap: 25px;
+    padding: 30px;
+  }
+  .jobseekers-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+}
 @media (max-width: 768px) {
   /* GENERAL PAGE PADDING */
   body {
