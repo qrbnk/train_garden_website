@@ -115,7 +115,7 @@ body {
 /* Grid for services */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* flexible columns */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* flexible columns */
   gap: 2.5rem;
   justify-items: center;    /* center each service item horizontally */
   align-items: start;       /* align rows at top */
