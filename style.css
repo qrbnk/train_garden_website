@@ -77,11 +77,17 @@ body {
 }
 
 .hero-image-center {
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
 }
-
+.skills-logo {
+  width: clamp(300px, 80%, 1700px); /* smaller min, responsive, smaller max */
+  height: auto;
+  transition: all 0.5s ease;
+}
 /* ===== HERO LOGO GRID ===== */
 .hero-logos-grid {
   display: grid;
@@ -94,10 +100,18 @@ body {
   margin-top: 2rem;
 }
 
-/* Hide skills logo on screens smaller than 768px */
+
+/* Tablets (iPad) — make smaller */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .skills-logo {
+    width: clamp(250px, 70%, 900px);
+  }
+}
+
+/* Mobile — hide completely */
 @media (max-width: 768px) {
   .skills-logo {
-    display: none !important; /* add !important to override other rules */
+    display: none !important;
   }
 }
 /* ===== SERVICES ===== */
