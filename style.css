@@ -117,6 +117,14 @@ body {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+/* Default: show desktop image, hide mobile one */
+.nature-image.mobile-only {
+  display: none;
+}
+
+.hero-image-right.desktop-only {
+  display: flex;
+}
 
 /* Blue image size */
 .blue-image {
@@ -194,7 +202,7 @@ body {
   }
 }
 
-/* Mobile (iPhone, small screens) */
+/* ===== Mobile (iPhone / small screens) ===== */
 @media (max-width: 768px) {
   .hero {
     padding: 1.5rem 1rem;
@@ -212,7 +220,7 @@ body {
   }
 
   .hero-text h2 {
-    font-size: 1.8rem; /* smaller text */
+    font-size: 1.8rem; /* keep smaller text */
   }
 
   .hero-text h3 {
@@ -221,14 +229,58 @@ body {
     margin-bottom: 0.5rem;
   }
 
-  .hero-image-right {
-    padding-right: 0; /* no extra padding on stacked layout */
-    justify-content: center; /* center image */
+  /* Mobile-only image between h2 and h3 */
+  .nature-image.mobile-only {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: 1rem auto; /* center and add spacing */
+  }
+
+  /* Hide desktop image on mobile */
+  .hero-image-right.desktop-only {
+    display: none;
+  }
+}
+
+/* ===== Tablet (iPad / medium screens) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero-row {
+    flex-direction: row; /* keep text left, image right */
+    gap: 2rem;
+  }
+
+  .hero-text {
+    padding-left: 2rem;
+    text-align: left;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero-image-right.desktop-only {
+    display: flex; /* show right image */
+    justify-content: flex-end;
+    padding-right: 2rem;
+  }
+
+  .nature-image.mobile-only {
+    display: none; /* hide mobile-only image on tablet */
   }
 
   .nature-image {
-    width: 80%; /* smaller image for mobile */
-    max-width: 300px;
+    width: clamp(300px, 50%, 600px); /* adjust size for tablet */
+    height: auto;
   }
 }
 
