@@ -271,7 +271,11 @@ body {
     
     padding: 1rem 0;
   }
-
+.logo-image {
+    position: relative;
+    left: 0.5rem;  /* moves it slightly to the right */
+  }
+}
   .nav-links {
     flex-direction: column;
     align-items: center;
