@@ -158,19 +158,50 @@ body {
 }
 
 
-/* Tablets (iPad) — make smaller */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .skills-logo {
-    width: clamp(250px, 70%, 900px);
+/* RESPONSIVE: Tablets */
+@media (max-width: 1024px) {
+  .hero-row {
+    flex-direction: column; /* stack text & image vertically */
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-image-right {
+    justify-content: center;
+  }
+
+  .nature-image {
+    width: clamp(250px, 60%, 400px);
   }
 }
-  .blue-image {
-    width: clamp(150px, 50%, 600px);
-  }
-/* Mobile — hide completely */
+
+/* RESPONSIVE: Mobile */
 @media (max-width: 768px) {
+  .hero-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-image-right {
+    justify-content: center;
+  }
+
+  .nature-image {
+    width: clamp(200px, 70%, 350px);
+  }
+
+  /* Hide skills logo if needed */
   .skills-logo {
-    display: none !important;
+    display: none;
   }
 }
 /* ===== SERVICES ===== */
