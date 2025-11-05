@@ -271,6 +271,10 @@ body {
     
     padding: 1rem 0;
   }
+.logo-image {
+    margin-left: 1rem; /* moves logo slightly to the right */
+    /* or use padding-left: 1rem; if you prefer */
+  }
 
   .nav-links {
     flex-direction: column;
