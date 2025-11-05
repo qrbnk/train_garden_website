@@ -190,7 +190,7 @@ body {
     display: none !important;
   }
 
-  .blue-image,
+  
   .skills-logo {
     width: 80%;
     max-width: 350px;
@@ -396,7 +396,7 @@ body {
 
 
   .services-image {
-    width: clamp(180px, 22vw, 300px);
+    width: clamp(300px, 22vw, 400px);
   }
 }
 .map-section {
