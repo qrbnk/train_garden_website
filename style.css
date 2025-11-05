@@ -84,7 +84,7 @@ body {
   margin-top: 2rem;
 }
 .skills-logo {
-  width: clamp(300px, 80%, 900px); /* smaller min, responsive, smaller max */
+  width: clamp(300px, 60%, 900px); /* smaller min, responsive, smaller max */
   max-width: 900px;
   height: auto;
   transition: all 0.5s ease;
