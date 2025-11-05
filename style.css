@@ -1,3 +1,6 @@
+Css
+
+
 /* ===== RESET ===== */
 * {
   box-sizing: border-box;
@@ -67,27 +70,16 @@ body {
   margin: 0 auto;
 }
 
-/* Hero row: text left, nature image right */
 .hero-row {
   display: flex;
   flex-direction: row;
-  align-items: center; /* vertical align for desktop */
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   gap: 2rem;
 }
 
-/* Desktop-only nature image */
-.nature-image.desktop-only {
-  display: block;
-}
-
-/* Mobile-only nature image */
-.nature-image.mobile-only {
-  display: none;
-}
-
-/* Text left */
+/* Hero text */
 .hero-text {
   flex: 1;
   text-align: left;
@@ -105,17 +97,29 @@ body {
   margin-top: 0;
 }
 
-/* Nature image right */
-.hero-image-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end; /* push image to right */
-}
-
+/* Nature images */
 .nature-image {
   width: clamp(300px, 50%, 500px);
   height: auto;
   transition: all 0.3s ease;
+}
+
+.nature-image.desktop-only {
+  display: block;
+}
+
+.nature-image.mobile-only {
+  display: none;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 300px;
+}
+
+/* Nature image container for desktop */
+.hero-image-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Bottom images */
@@ -137,19 +141,30 @@ body {
   height: auto;
 }
 
-/* ===== TABLET ===== */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* ===== DESKTOP MEDIA QUERY ===== */
+@media (min-width: 769px) {
   .hero-row {
     flex-direction: row;
-    gap: 1.5rem;
   }
 
-  .hero-left {
-    align-items: flex-start;
+  .hero-text {
+    text-align: left;
+  }
+
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.5rem;
   }
 
   .nature-image.desktop-only {
-    width: clamp(250px, 50%, 400px);
+    display: block;
+  }
+
+  .nature-image.mobile-only {
+    display: none;
   }
 
   .skills-logo,
@@ -157,11 +172,12 @@ body {
     width: clamp(250px, 50%, 600px);
   }
 }
-/* ===== MOBILE ===== */
+
+/* ===== MOBILE MEDIA QUERY ===== */
 @media (max-width: 768px) {
   .hero-row {
     flex-direction: column;
-    align-items: center; /* center everything */
+    align-items: center;
     gap: 1rem;
   }
 
@@ -176,30 +192,33 @@ body {
   .hero-text h3 {
     font-size: 1rem;
   }
-
-  /* Show mobile-only image */
-  .nature-image.mobile-only {
-    display: block;
-    margin: 1rem auto;
-    width: 80%;
-    max-width: 300px;
-  }
-
-  /* Hide desktop-only image */
-  .nature-image.desktop-only {
+/* Hide desktop image on mobile */
+@media (max-width: 768px) {
+  .desktop-only {
     display: none !important;
   }
 
-  
-  .skills-logo {
-    width: 80%;
-    max-width: 350px;
+  .mobile-only {
+    display: block !important;
   }
 }
-/* Hide desktop nature image on mobile */
-@media (max-width: 768px) {
-  .desktop-only img {
+
+/* Hide mobile image on desktop */
+@media (min-width: 769px) {
+  .mobile-only {
     display: none !important;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+  /* Make skills and blue image bigger */
+  .skills-logo,
+  .blue-image {
+    width: 100%;
+    max-width: 500px;
   }
 }
 /* ===== SERVICES ===== */
@@ -365,21 +384,22 @@ body {
   }
 
   .services-image {
-    width: clamp(280px, 70vw, 350px);
+    width: clamp(320px, 80vw, 450px); /* bigger than before */
   }
 
   .services-image.small {
-    width: 80%;
-    max-width: 250px;
+    width: 90%;
+    max-width: 350px;
   }
 
   .services-image.medium {
-    width: 90%;
-    max-width: 300px;
+    width: 95%;
+    max-width: 400px;
   }
 
   .services-image.large {
-    width: clamp(300px, 70vw, 400px);
+    width: 100%;
+    max-width: 500px; /* biggest logos */
   }
 }
 
