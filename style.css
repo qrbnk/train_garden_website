@@ -57,239 +57,151 @@ body {
 }
 
 /* ===== HERO ===== */
-/* HERO: Keep the main container vertical */
-./* Hero container vertical */
 .hero {
   display: flex;
-  flex-direction: column; /* stack rows vertically */
+  flex-direction: column;
   align-items: center;
   gap: 2rem;
   padding: 3rem 1rem;
-  text-align: center;
-  margin-bottom: 0rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Row: text left, image right */
+/* Hero row: text left, nature image right */
 .hero-row {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between; /* push text left, image right */
-  gap: 2rem;
+  align-items: center; /* vertical align for desktop */
+  justify-content: space-between;
   width: 100%;
-  max-width: 1100px; /* same as container */
-  margin: 0 auto;    /* center row in container */
+  gap: 2rem;
+}
+
+/* Desktop-only nature image */
+.nature-image.desktop-only {
+  display: block;
+}
+
+/* Mobile-only nature image */
+.nature-image.mobile-only {
+  display: none;
 }
 
 /* Text left */
 .hero-text {
   flex: 1;
   text-align: left;
-  padding-left: 2rem; /* control left spacing */
-  color: #091747;
-  margin-top: 30px;
-  gap: 2rem;
 }
 
-/* Right image */
+.hero-text h2 {
+  font-size: 3rem;
+  color: #091747;
+  margin-bottom: 1rem;
+}
+
+.hero-text h3 {
+  font-size: 1.5rem;
+  color: #091747;
+  margin-top: 0;
+}
+
+/* Nature image right */
 .hero-image-right {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* right-align */
-  /* optional: add extra spacing from text */
-  gap: 2rem; 
-  padding-right: 2rem; /* control right spacing */
+  justify-content: flex-end; /* push image to right */
 }
 
 .nature-image {
-  width: clamp(400px, 50%, 700px); /* bigger */
+  width: clamp(300px, 50%, 500px);
   height: auto;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
-/* Keep other hero images vertical */
+/* Bottom images */
 .hero-image-center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-/* Default: show desktop image, hide mobile one */
-.nature-image.mobile-only {
-  display: none;
 }
 
-.hero-image-right.desktop-only {
-  display: flex;
-}
-
-/* Blue image size */
 .blue-image {
-  width: clamp(400px, 60%, 800px);
+  width: clamp(400px, 80%, 800px);
   height: auto;
-  transition: all 0.5s ease;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
 }
 
-/* Skills logo */
 .skills-logo {
-  width: clamp(300px, 60%, 900px);
+  width: clamp(600px, 80%, 1000px);
   height: auto;
-  margin-bottom: 0.5rem;
-  transition: all 0.5s ease;
-}
-/* Base / Desktop (MacBook Pro) */
-.blue-image {
-  width: clamp(400px, 50%, 800px) !important; /* force size */
-  max-width: 800px !important;
-  height: auto;
-  transition: all 0.5s ease;
-    margin-top: 0rem; /* controls space above image */
-    margin-bottom: 0.5rem; /* controls space below image */
-
-}
-/* ===== HERO LOGO GRID ===== */
-.hero-logos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
-  width: 80%;
-  max-width: 768px;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
 }
 
-
-/* ===== HERO RESPONSIVE ===== */
-
-/* Tablet (iPad) */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .hero {
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-  }
-
+/* ===== TABLET ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
   .hero-row {
+    flex-direction: row;
     gap: 1.5rem;
   }
 
-  .hero-text {
-    padding-left: 1.5rem; /* move text slightly left */
+  .hero-left {
+    align-items: flex-start;
   }
 
-  .hero-text h2 {
-    font-size: 2.2rem; /* smaller than desktop */
+  .nature-image.desktop-only {
+    width: clamp(250px, 50%, 400px);
   }
 
-  .hero-text h3 {
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .hero-image-right {
-    padding-right: 3rem; /* move image slightly to the right */
-  }
-
-  .nature-image {
-    width: clamp(250px, 45%, 600px); /* resize image */
+  .skills-logo,
+  .blue-image {
+    width: clamp(250px, 50%, 600px);
   }
 }
-
-/* ===== Mobile (iPhone / small screens) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .hero {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
-  }
-
   .hero-row {
-    flex-direction: column; /* stack text and image vertically */
+    flex-direction: column;
+    align-items: center; /* center everything */
     gap: 1rem;
   }
 
   .hero-text {
-    padding-left: 1rem;
-    text-align: center; /* center text when stacked */
+    text-align: center;
   }
 
   .hero-text h2 {
-    font-size: 1.8rem; /* keep smaller text */
+    font-size: 1.8rem;
   }
 
   .hero-text h3 {
     font-size: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
   }
 
-  /* Mobile-only image between h2 and h3 */
+  /* Show mobile-only image */
   .nature-image.mobile-only {
     display: block;
+    margin: 1rem auto;
     width: 80%;
     max-width: 300px;
-    margin: 1rem auto; /* center and add spacing */
   }
 
-  /* Hide desktop image on mobile */
-  .hero-image-right.desktop-only {
-    display: none;
-  }
-}
-
-/* ===== Tablet (iPad / medium screens) ===== */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .hero {
-    padding: 2rem 1rem;
-    gap: 1.5rem;
+  /* Hide desktop-only image */
+  .nature-image.desktop-only {
+    display: none !important;
   }
 
-  .hero-row {
-    flex-direction: row; /* keep text left, image right */
-    gap: 2rem;
-  }
-
-  .hero-text {
-    padding-left: 2rem;
-    text-align: left;
-  }
-
-  .hero-text h2 {
-    font-size: 2.5rem;
-  }
-
-  .hero-text h3 {
-    font-size: 1.2rem;
-  }
-
-  .hero-image-right.desktop-only {
-    display: flex; /* show right image */
-    justify-content: flex-end;
-    padding-right: 2rem;
-  }
-
-  .nature-image.mobile-only {
-    display: none; /* hide mobile-only image on tablet */
-  }
-
-  .nature-image {
-    width: clamp(300px, 50%, 600px); /* adjust size for tablet */
-    height: auto;
-  }
-}
-
-
-  /* Hide skills logo if needed */
+  .blue-image,
   .skills-logo {
-    display: none;
+    width: 80%;
+    max-width: 350px;
   }
-
+}
+/* Hide desktop nature image on mobile */
+@media (max-width: 768px) {
+  .desktop-only img {
+    display: none !important;
+  }
+}
 /* ===== SERVICES ===== */
 .services {
   display: flex;
