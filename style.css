@@ -187,28 +187,64 @@ body {
   justify-content: center;
   padding: 2rem 0;
 }
-.newsletter-section {
-  display: flex;                 /* use flexbox */
-  justify-content: center;       /* center horizontally */
-  align-items: center;           /* center vertically (optional if height is set) */
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter-container {
+  display: flex;
+  flex-direction: column;      /* stack button and paragraph vertically */
+  align-items: center;         /* center horizontally */
+  justify-content: center;     /* optional vertical centering */
+  gap: 1rem;                   /* space between button and paragraph */
   width: 100%;
-  margin: 3rem 0;                /* spacing above/below */
+  margin-top: 4rem;            /* space above newsletter section */
+  text-align: center;          /* center paragraph text */
 }
 
+.newsletter-container p {
+  font-size: 1rem;             /* desktop size */
+  color: #34495e;
+  line-height: 1.5;
+  margin: 0;
+}
+/* ===== NEWSLETTER BUTTON ===== */
 .newsletter-btn {
-  background-color: #091747;     /* blue color */
-  color: #fff;                   /* white text */
-  padding: 0.75rem 1.5rem;
+  background-color: #091747;   /* button background */
+  color: #fff;                 /* button text color */
+  padding: 0.75rem 1.5rem;     /* button size */
   font-size: 1.1rem;
   font-weight: 500;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 8px;          /* rounded corners */
+  text-decoration: none;       /* remove underline */
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .newsletter-btn:hover {
-  background-color: #0d2255;     /* darker blue on hover */
-  transform: scale(1.05);
+  background-color: #0d2255;   /* darker blue on hover */
+  transform: scale(1.05);      /* small zoom effect */
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .newsletter-container {
+    margin-top: 3rem;          /* slightly smaller top margin */
+    gap: 0.75rem;              /* less space between button and text */
+  }
+
+  .newsletter-container p {
+    font-size: 0.95rem;        /* slightly smaller text */
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .newsletter-container {
+    margin-top: 2.5rem;        /* smaller top margin */
+    gap: 0.5rem;               /* tighter spacing */
+    padding: 0 1rem;           /* add some horizontal padding */
+  }
+
+  .newsletter-container p {
+    font-size: 0.9rem;         /* smaller text for mobile */
+  }
 }
 /* ===== MEDIA QUERIES ===== */
 @media (min-width: 769px) {
