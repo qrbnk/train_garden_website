@@ -84,7 +84,8 @@ body {
   margin-top: 2rem;
 }
 .skills-logo {
-  width: clamp(300px, 80%, 1700px); /* smaller min, responsive, smaller max */
+  width: clamp(300px, 80%, 900px); /* smaller min, responsive, smaller max */
+  max-width: 900px;
   height: auto;
   transition: all 0.5s ease;
 }
@@ -232,13 +233,14 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+/* Mobile (phones) — 1 service per row */
+@media (max-width: 768px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
 
   .services-image {
-    width: clamp(280px, 50vw, 350px);
+    width: clamp(280px, 70vw, 350px);
   }
 
   .services-image.small {
@@ -252,7 +254,20 @@ body {
   }
 
   .services-image.large {
-    width: clamp(300px, 55vw, 400px);
+    width: clamp(300px, 70vw, 400px);
+  }
+}
+
+/* Tablets — 3 services per row */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .services-image {
+    width: clamp(180px, 22vw, 300px);
   }
 }
 .map-section {
