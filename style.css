@@ -339,10 +339,20 @@ body {
   .services-grid {
     grid-template-columns: 1fr;
   }
-
-  .services-image {
-    width: clamp(600px, 100vw, 750px);
+.service-item {
+    width: 100%; /* allows images to grow within the full width of the column */
+    display: flex;
+    justify-content: center; /* centers image horizontally */
   }
+  services-image,
+  .services-image.small,
+  .services-image.medium,
+  .services-image.large {
+      width: 95vw !important;  /* almost full width */
+      max-width: 900px !important; /* cap max width */
+      height: auto !important;      /* maintain aspect ratio */
+  }
+
 
   .newsletter-container {
     margin-top: 2.5rem;
