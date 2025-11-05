@@ -187,17 +187,28 @@ body {
     gap: 1rem;
   }
 
-  .hero-text {
-    text-align: center;
+  .hero-text h2 {
+    font-size: 2rem; /* smaller on mobile */
   }
+  
+  .hero-text h3 {
+    font-size: 1rem; /* smaller on mobile */
+  }
+  
+  .hero-text {
+    padding-left: 1rem; /* reduce left padding for small screens */
+  }
+}
 
   .hero-image-right {
     justify-content: center;
   }
 
   .nature-image {
-    width: clamp(200px, 70%, 350px);
+    width: 80%; /* smaller on mobile */
+    max-width: 300px; /* optional max width */
   }
+
 
   /* Hide skills logo if needed */
   .skills-logo {
