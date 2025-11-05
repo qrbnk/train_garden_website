@@ -74,6 +74,7 @@ body {
 .hero-text h3 {
   font-size: 1rem;
   color: #091747;
+   margin: 2rem 0;
 }
 
 .hero-image-center {
@@ -301,6 +302,10 @@ body {
     gap: 1.5rem;
     justify-items: center;
   }
+.services {
+    margin: 2rem 0; /* reduce top/bottom space */
+  }
+
 
   .services-image {
     width: clamp(180px, 22vw, 300px);
