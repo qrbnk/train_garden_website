@@ -321,7 +321,7 @@ body {
     display: block !important;
   }
 
-  .skills-logo, {
+  .skills-logo {
     width: 250%;
     max-width: 900px;
     margin-top: 0%;
