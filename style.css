@@ -308,6 +308,7 @@ body {
     font-size: 1rem;
     margin-left: 0;
   margin-right: 0;
+  margin-bottom: 0.5rem;
   text-align: center;
   width: 100%;
   }
@@ -320,10 +321,15 @@ body {
     display: block !important;
   }
 
-  .skills-logo,
-  .blue-image {
-    width: 100%;
+  .skills-logo, {
+    width: 150%;
     max-width: 900px;
+    margin-top: 0%;
+  }
+  .blue-image {
+    width: 135%;
+    max-width: 900px;
+    margin-top: 0%;
   }
 
   .services-grid {
@@ -331,7 +337,7 @@ body {
   }
 
   .services-image {
-    width: clamp(350px, 90vw, 550px);
+    width: clamp(600px, 100vw, 750px);
   }
 
   .newsletter-container {
