@@ -172,8 +172,8 @@ body {
 }
 
 .services-image {
-  width: clamp(250px, 25vw, 400px);
-  aspect-ratio: 312 / 209;
+  width: clamp(400px, 25vw, 500px);
+  aspect-ratio: 412 / 309;
   object-fit: contain;
   margin-bottom: 1rem;
   transition: transform 0.3s ease, width 0.3s ease;
@@ -188,7 +188,7 @@ body {
 }
 
 .services-image.large {
-  width: clamp(300px, 30vw, 450px);
+  width: clamp(400px, 50vw, 500px);
 }
 
 .service-item p {
@@ -344,13 +344,21 @@ body {
     display: flex;
     justify-content: center; /* centers image horizontally */
   }
-  services-image,
+  .services-image,
   .services-image.small,
   .services-image.medium,
   .services-image.large {
-      width: 95vw !important;  /* almost full width */
-      max-width: 900px !important; /* cap max width */
-      height: auto !important;      /* maintain aspect ratio */
+      /* This makes the image wider than the container content */
+      width: calc(100% + 4rem) !important; 
+      
+      /* This shifts the image left by 1rem (the container's padding) */
+      margin-left: -2rem !important; 
+      
+      /* Reset right margin for centering if necessary */
+      margin-right: -2rem !important;
+      
+      max-width: none !important; /* Remove max-width constraints */
+      height: auto !important;
   }
 
 
