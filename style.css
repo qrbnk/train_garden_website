@@ -70,8 +70,8 @@ body {
 .hero-row {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes text left, image right */
-  flex-wrap: wrap; /* ensures it stays responsive */
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .hero-text {
@@ -110,7 +110,7 @@ body {
 .hero-image-right {
   flex: 1;
   display: flex;
-  justify-content: flex-end; /* moves image to the right edge */
+  justify-content: flex-end;
 }
 
 
@@ -240,16 +240,10 @@ body {
   padding: 2rem 0;
 }
 
-/* ===== MAP SECTION ===== */
+/* ===== MAP SECTION (Placeholder) ===== */
 .map-section {
   text-align: center;
   padding: 3rem 1rem;
-}
-
-.map-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
 }
 
 .map-container iframe {
@@ -259,23 +253,218 @@ body {
   border: 0;
 }
 
+/* ===== CURRENT ROLES SECTION - NEW STYLES ===== */
+.current-roles {
+    padding: 4rem 1rem;
+    background-color: #f8f8f8; 
+}
+
+.role-entry {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- Website Snapshot Container --- */
+.website-snapshot-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.5rem; /* Base padding for desktop and tablets */
+    background-color: #eef2f7;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Heading Link Styles --- */
+.glendale-heading-link {
+    text-decoration: none; 
+    display: block; 
+    margin-bottom: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.glendale-heading-link.blue-link h3 {
+   text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 145%;
+  padding: 0.5rem 1rem;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+   
+}
+
+.glendale-heading-link:hover {
+    opacity: 0.8; 
+}
+
+/* ----------------------------------------------------
+   DEFAULT (DESKTOP) VIEW: SHOW IFRAME, HIDE LOGO
+   ---------------------------------------------------- */
+   
+/* DESKTOP IFRAME CONTAINER: Show by default */
+.website-snapshot-container .desktop-only-iframe {
+    display: block !important; 
+}
+
+.snapshot-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.snapshot-link iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1) translate(-10%, -25%);
+    transform-origin: 0 0;
+}
+
+/* MOBILE LOGO CONTAINER: Hidden by default */
+.website-snapshot-container .mobile-only-logo {
+    display: none !important; 
+}
+
+
+/* --- MOBILE LOGO STYLES (Only visible on mobile breakpoint) --- */
+
+.logo-snapshot-link {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; 
+    border: none; 
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent; 
+}
+
+.glendale-logo-image {
+    /* YOUR TARGET SIZE FOR THE LOGO IMAGE */
+   width: clamp(400px, 25vw, 500px);
+  aspect-ratio: 412 / 309;
+  object-fit: contain;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+
+.logo-snapshot-link:hover .glendale-logo-image {
+    transform: scale(1.05);
+}
+
+/* --- Company Info Box --- */
+.company-info-box {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    margin-top: 0rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company-info-box h4 {
+    font-size: 1.8rem;
+    color: #091747;
+    margin-bottom: 1rem;
+}
+
+.company-info-box ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.company-info-box ul li {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.role-description {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 4px solid #4a90e2;
+    background-color: #f4f9ff;
+}
+
+/* --- JD Download Button --- */
+.jd-download-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+     background: #091747;
+  color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.jd-download-btn:hover {
+    background-color: #3b74b6;
+}
+
+/* --- Get In Touch Button--- */
+.get-in-touch-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #208a65; 
+    color: #fff;
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0; 
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.get-in-touch-btn:hover {
+    background-color: #3bb679;
+}
+
+
 /* =========================================================
    MEDIA QUERIES
 ========================================================= */
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE (Max Width 768px) ===== */
 @media (max-width: 768px) {
   /* HEADER */
   .site-header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
     padding: 1rem 0;
   }
 .logo-image {
-    margin-left: 1rem; /* moves logo slightly to the right */
-    /* or use padding-left: 1rem; if you prefer */
+    margin-left: 1rem;
   }
 
   .nav-links {
@@ -298,25 +487,25 @@ body {
   .hero-text {
     text-align: center;
     display: flex;
-  flex-direction: column;
-  align-items: center;  /
+    flex-direction: column;
+    align-items: center;  
   }
 
   .hero-text h2 {
     font-size: 1.8rem;
     margin-left: 0;
-  margin-right: 0;
-  text-align: center;
-  width: 100%;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
   }
 
   .hero-text h3 {
     font-size: 1rem;
     margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0.5rem;
-  text-align: center;
-  width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
   }
 
   .desktop-only {
@@ -342,9 +531,9 @@ body {
     grid-template-columns: 1fr;
   }
 .service-item {
-    width: 100%; /* allows images to grow within the full width of the column */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* centers image horizontally */
+    justify-content: center; 
   }
   .services-image,
   .services-image.small,
@@ -375,10 +564,53 @@ body {
     font-size: 0.9rem;
     margin-top: 2rem;
   }
+  
+  /* CURRENT ROLES MOBILE ADJUSTMENTS */
+    .role-entry {
+        flex-direction: column;
+        width: 100%; 
+        max-width: 450px; 
+        margin: 0 auto; 
+        height: auto !important; 
+    }
+    
+    .website-snapshot-container {
+        /* FIX: Reduce padding to control vertical spacing around logo */
+        padding: 1rem 1.5rem 0.5rem 1.5rem; 
+        background-color: white !important;
+        height: auto !important; 
+    }
+    
+    .company-info-box {
+        padding: 1.5rem;
+    }
+    
+    /* FIX: Hide the Desktop Iframe container on mobile */
+    .website-snapshot-container .desktop-only-iframe {
+        display: none !important; 
+    }
+    
+    /* FIX: Show the Mobile Logo container and ensure it doesn't create extra space */
+    .website-snapshot-container .mobile-only-logo {
+        display: block !important; 
+        background-color: transparent !important;
+        /* REMOVED: min-height: 400px!important; */ 
+        height: auto !important; /* Let content define height */
+    }
+    
 }
 
-/* ===== TABLET ===== */
+/* ===== TABLET (Min Width 769px) and (Max Width 1024px) ===== */
 @media (min-width: 769px) and (max-width: 1024px) {
+    
+    /* Ensure the iframe is shown and logo is hidden on tablets/mid-screens */
+    .website-snapshot-container .desktop-only-iframe {
+        display: block !important;
+    }
+    .website-snapshot-container .mobile-only-logo {
+        display: none !important;
+    }
+    
   .site-header {
     flex-direction: row;
     justify-content: space-between;
@@ -402,8 +634,17 @@ body {
   }
 }
 
-/* ===== DESKTOP ===== */
+/* ===== DESKTOP (Min Width 1025px) ===== */
 @media (min-width: 1025px) {
+  
+  /* Ensure iframe is visible, logo is hidden */
+    .website-snapshot-container .desktop-only-iframe {
+        display: block !important;
+    }
+    .website-snapshot-container .mobile-only-logo {
+        display: none !important;
+    }
+    
   .site-header {
     flex-direction: row;
     justify-content: space-between;
