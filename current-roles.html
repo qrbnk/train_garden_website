@@ -1,144 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Current Roles - Train Garden</title>
-
-    <style>
-        /* Embed basic styles for structure and logo visibility */
-        .site-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem 0;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex; /* Assuming desktop/tablet layout here */
-            gap: 1.5rem;
-        }
-        
-        /* Styles copied from style.css for role section to ensure logo/iframe work */
-        .website-snapshot-container {
-            flex: 1;
-            min-width: 300px;
-            padding: 1.5rem;
-            background-color: #eef2f7;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Default (Desktop): Show iframe, hide logo */
-        .website-snapshot-container .desktop-only-iframe {
-            display: block !important;
-        }
-
-        .website-snapshot-container .mobile-only-logo {
-            display: none !important;
-        }
-        
-        .glendale-logo-image {
-            max-width: 90%; 
-            max-height: 350px; 
-            width: auto;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        .logo-snapshot-link {
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: auto; 
-            border: none; 
-        }
-
-        /* Mobile Adjustments (from style.css media query) */
-        @media (max-width: 768px) {
-            .website-snapshot-container {
-                padding: 1rem 1.5rem 0.5rem 1.5rem; 
-                background-color: white !important;
-            }
-            .website-snapshot-container .desktop-only-iframe {
-                display: none !important;
-            }
-            /* FIX: Ensure mobile logo is shown on mobile */
-            .website-snapshot-container .mobile-only-logo {
-                display: block !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Roles - Train Garden</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header class="site-header container">
-        <a href="index.html"> 
-            <img src="logo.png" alt="Train Garden Logo" class="logo-image" />
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="current-roles.html">Current Roles</a></li>
-                <li><a href="https://forms.gle/RBbVRKBdVMtkdTSe9" target="_blank" rel="noopener noreferrer" class="cta">For Jobseekers</a></li>
-                <li><a href="map.html">Skills Hubs Around You</a></li>
-                <li> <a href="mailto:traingarden25@gmail.com?subject=Inquiry&body=Hello,%20I%20want%20to%20contact%20you" class="contact-btn">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header container">
+    <a href="index.html"> 
+          <img src="logo.png" alt="Train Garden Logo" class="logo-image" />
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="map.html">Skills Hubs Around You</a></li>
+        <li><a href="https://forms.gle/RBbVRKBdVMtkdTSe9" target="_blank" rel="noopener noreferrer" class="cta">For Jobseekers</a></li>
+        <li> <a href="mailto:traingarden25@gmail.com?subject=Inquiry&body=Hello,%20I%20want%20to%20contact%20you" class="contact-btn">Contact Us</a></li>
+        <li><a href="current-roles.html">Current Roles</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section id="current-roles-page" class="current-roles container" style="padding-top: 5rem;">
+    <h2 class="section-title">Current Roles</h2>
     
-    <section class="current-roles">
-        <div class="role-entry">
-            <div class="website-snapshot-container">
-                <a href="https://www.glendale-services.co.uk/" class="glendale-heading-link blue-link" target="_blank">
-                    <h3>Glendale Services</h3>
+    <div class="role-entry">
+        
+        <div class="website-snapshot-container">
+            
+            <a href="https://www.glendale-services.co.uk" target="_blank" rel="noopener noreferrer" class="glendale-heading-link blue-link">
+                <h3>Glendale Services</h3>
+            </a>
+            
+            <div class="desktop-only-iframe">
+                <a href="https://www.glendale-services.co.uk" target="_blank" rel="noopener noreferrer" class="snapshot-link">
+                    <iframe src="https://www.glendale-services.co.uk" title="Glendale Services Website Snapshot" scrolling="no"></iframe>
                 </a>
-
-                <div class="desktop-only-iframe">
-                    <a href="https://www.glendale-services.co.uk/" class="snapshot-link" target="_blank">
-                        <iframe src="https://www.glendale-services.co.uk/" title="Glendale Services Website Snapshot" scrolling="no"></iframe>
-                    </a>
-                </div>
-
-                <div class="mobile-only-logo">
-                    <a href="https://www.glendale-services.co.uk/" class="logo-snapshot-link" target="_blank">
-                        <img src="glendale-logo.svg" alt="Glendale Logo" class="glendale-logo-image" />
-                    </a>
-                </div>
             </div>
-
-            <div class="company-info-box">
-                <div>
-                    <h4>Grounds Maintenance Operative</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Location: Kingston upon Thames</li>
-                        <li><i class="fas fa-calendar-alt"></i> Contract: Full-Time / Permanent</li>
-                        <li><i class="fas fa-dollar-sign"></i> Salary: £23,000 - £25,000</li>
-                    </ul>
-                    <div class="role-description">
-                        <p>This is a fantastic opportunity to join a national company committed to sustainable environmental practices. Full training and development provided for the right candidate.</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <a href="Kingston Grounds Maintenance Operative Advert Template.pdf" class="jd-download-btn" target="_blank">Download Full Job Description</a>
-                    <a href="mailto:traingarden25@gmail.com?subject=Application%20for%20Grounds%20Maintenance%20Operative" class="get-in-touch-btn">Get In Touch</a>
-                </div>
+            
+            <div class="mobile-only-logo">
+                <a href="https://www.glendale-services.co.uk" target="_blank" rel="noopener noreferrer" class="logo-snapshot-link">
+                    <img src="glendale-logo.svg" alt="Glendale Services Logo" class="glendale-logo-image">
+                </a>
             </div>
+            
         </div>
+
+        <div class="company-info-box">
+            <h4>Seasonal Grounds Maintenance Operative</h4>
+            <p>Glendale is a specialist provider of grounds management services, tree management, and winter services for public and private sectors.</p>
+            <ul>
+                <li><strong>Location:</strong> Various London sites</li>
+                <li><strong>Type:</strong> Fixed Term Contract - Full Time 40 hours</li>
+                <li><strong>Start Date:</strong> March 2026</li>
+            </ul>
+            <p class="role-description">Vacancy: Seasonal Grounds Maintenance Operative | Kingston Upon Thames</p>
+            
+            <a href="/Users/quarrybank/Desktop/git/train_garden_website-5/Kingston Grounds Maintenance Operative Advert Template.pdf" download="Glendale_Horticultural_Apprentice_JD.pdf" class="jd-download-btn">
+                Download Job Description (JD)
+            </a>
+
+            <a href="https://forms.gle/RBbVRKBdVMtkdTSe9" target="_blank" rel="noopener noreferrer" class="get-in-touch-btn">Get In Touch</a>
+            
+        </div>
+    </div>
     </section>
 
-    <footer class="site-footer footer-center center">
-        <p>© 2025 Train Garden</p>
-    </footer>
+
+  <footer class="site-footer footer-center center">
+    <p>© 2025 Train Garden</p>
+  </footer>
 
 </body>
 </html>
