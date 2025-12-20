@@ -1,0 +1,470 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-image {
+  width: 120px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links a.cta {
+  background: #091747;
+  color: #fff;
+  border-radius: 8px;
+}
+.nav-links a.map-link-unique {
+ text-decoration: none;
+  color: #333; 
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* pushes text left, image right */
+  flex-wrap: wrap; /* ensures it stays responsive */
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  color: #091747;
+  margin-bottom: 1rem;
+}
+
+.hero-text h3 {
+  font-size: 1.5rem;
+  color: #091747;
+  margin-top: 1.5rem;
+}
+
+/* ===== IMAGES ===== */
+.nature-image {
+  max-width: 90%;
+  height: auto;
+}
+
+/* Hide or show images depending on screen size */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+
+.hero-image-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* moves image to the right edge */
+}
+
+
+.hero-image-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.blue-image {
+  width: clamp(400px, 100%, 800px);
+  height: auto;
+}
+
+.skills-logo {
+  width: clamp(600px, 100%, 1000px);
+  height: auto;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .services-image {
+  transform: scale(1.05);
+}
+
+.services-image {
+  width: clamp(400px, 25vw, 500px);
+  aspect-ratio: 412 / 309;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.services-image.small {
+  width: clamp(180px, 20vw, 250px);
+}
+
+.services-image.medium {
+  width: clamp(220px, 22vw, 300px);
+}
+
+.services-image.large {
+  width: clamp(400px, 50vw, 500px);
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #34495e;
+  margin-top: 0.5rem;
+}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.newsletter-container p {
+  font-size: 1rem;
+  color: #34495e;
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
+.newsletter-btn {
+  background-color: #091747;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #0d2255;
+  transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+.footer-center {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* ===== MAP SECTION ===== */
+.map-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.map-container iframe {
+  width: 60%;
+  max-width: 800px;
+  height: 480px;
+  border: 0;
+}
+
+/* =========================================================
+   MEDIA QUERIES
+========================================================= */
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  /* HEADER */
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 1rem 0;
+  }
+.logo-image {
+    margin-left: 1rem; /* moves logo slightly to the right */
+    /* or use padding-left: 1rem; if you prefer */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links a {
+    text-align: center;
+  }
+/* ===== MAP SECTION ===== */
+/* DEFAULT (DESKTOP) MAP STYLE */
+.map-container iframe {
+  width: 100%;
+  max-width: 800px; /* Desktop width limit */
+  height: 480px;    /* Desktop height */
+  border: 0;
+}
+
+/* 📱 MOBILE ADJUSTMENTS (Inside @media (max-width: 768px)) */
+@media (max-width: 768px) {
+  /* ... (All your other mobile styles) ... */
+
+  /* MAP EMBED CONTROL */
+  .map-container iframe {
+    max-width: none;
+    /* CHANGE HEIGHT FOR MOBILE: This makes the map shorter on small screens */
+    height: 300px; 
+  }
+}
+
+
+/* 📱 MOBILE ADJUSTMENTS (Applies if you re-embed the map) */
+@media (max-width: 768px) {
+  .map-container iframe {
+    width: 100%;
+  max-width: 800px;
+  height: 480px;
+  border: 0;
+  }
+}
+
+  /* HERO */
+  .hero-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-text {
+    text-align: center;
+    display: flex;
+  flex-direction: column;
+  align-items: center; 
+  }
+
+  .hero-text h2 {
+    font-size: 1.8rem;
+    margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  width: 100%;
+  }
+
+  .hero-text h3 {
+    font-size: 1rem;
+    margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  width: 100%;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .skills-logo {
+    width: 135%;
+    max-width: 768px;
+    margin-top: 0%;
+  }
+  .blue-image {
+    width: 150%;
+    max-width: 900px;
+    margin-top: 0%;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+.service-item {
+    width: 100%; /* allows images to grow within the full width of the column */
+    display: flex;
+    justify-content: center; /* centers image horizontally */
+  }
+  .services-image,
+  .services-image.small,
+  .services-image.medium,
+  .services-image.large {
+      /* This makes the image wider than the container content */
+      width: calc(100% + 4rem) !important; 
+      
+      /* This shifts the image left by 1rem (the container's padding) */
+      margin-left: -2rem !important; 
+      
+      /* Reset right margin for centering if necessary */
+      margin-right: -2rem !important;
+      
+      max-width: none !important; /* Remove max-width constraints */
+      height: auto !important;
+  }
+
+
+  .newsletter-container {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .newsletter-container p {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .newsletter-container {
+    margin-top: 3rem;
+    gap: 0.75rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1025px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .desktop-only {
+    display: block !important;
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
+}
