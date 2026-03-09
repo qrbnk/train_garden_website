@@ -35,25 +35,31 @@ body {
   height: auto;
 }
 
+/* 1. Desktop View (Default) */
 .nav-links {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Horizontal for computers */
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .nav-links a.cta {
   background: #091747;
   color: #fff;
   border-radius: 8px;
+  white-space: nowrap; 
 }
 
 /* ===== HERO ===== */
