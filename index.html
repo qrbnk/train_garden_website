@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Train Garden | Grow Your Skills</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -64,22 +65,13 @@
 <div class="lg:col-span-7 z-10 text-center md:text-left">
 <span class="inline-block font-bold tracking-[0.2em] mb-4 uppercase text-emerald-700 text-xs md:text-sm">The Future is Green</span>
 <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-on-surface leading-tight tracking-tight mb-6">
-                    Grow Your Skills with <br class="hidden md:block"/> <span class="italic text-emerald-700">Train Garden</span>
+                        Grow Your Skills with <br class="hidden md:block"/> <span class="italic text-emerald-700">Train Garden</span>
 </h1>
 <p class="text-base md:text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                    A green skills and recruitment platform designed to strengthen the talent pipeline for the growing green economy.
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start">
+                        A green skills and recruitment platform designed to strengthen the talent pipeline for the growing green economy.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 <a class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-md shadow-lg hero-gradient text-center" href="https://forms.gle/TmXsP7VHgy4ivL4q9" rel="noopener noreferrer" target="_blank">Start Your Journey</a>
-<div class="flex items-center gap-4">
-    <div class="hidden sm:block h-10 w-[1px] bg-slate-200"></div>
-    <div class="flex flex-col items-start">
-        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Partnered with</span>
-        <a href="https://ingeus.co.uk/" rel="noopener noreferrer" target="_blank" class="hover:opacity-80 transition-opacity">
-            <img alt="Ingeus Logo" class="h-6 md:h-8 w-auto" src="ingeus_logo.png"/>
-        </a>
-    </div>
-</div>
 </div>
 </div>
 <div class="hidden md:block lg:col-span-5 relative flex justify-center items-center">
@@ -90,6 +82,43 @@
 </div>
 </div>
 </section>
+<!-- Request a Call Modal (Simulation of new tab content as a modal for better UX within same context) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-primary/40 backdrop-blur-sm" id="call-modal">
+<div class="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-8">
+<div class="flex justify-between items-center mb-6">
+<img alt="Train Garden Logo" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida/ADBb0ugw3PYkS2LyTF6XPzqv4HFjfMPKZ-xKPSQPszYGvVffb48elo-75YqzFP0RS9thoh7NvEM155eLZ4vuFrmwk045M8twDYOZOu5ru5dzPwdjGJxr5HhX7FxpuKL3z8g8fee9sUd_Xo8b7ZUv9Tbd-tj11Lw050aKWWzg6zy-OC8IOsIO4oW_ubIkTf1ySK107znhwIxrNkIsLFEiuEBGS1NxqMntbt8CTJBz0u7FRqlE_oT3QEIj4a8WKsgdJ6jrQUgjFnub2vSd-Q"/>
+<button class="text-slate-400 hover:text-slate-600" onclick="closeRequestCallModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h2 class="text-2xl font-bold text-primary mb-2">Request a Call</h2>
+<p class="text-slate-600 text-sm mb-6">Fill in your details and our team will be in touch shortly.</p>
+<form class="space-y-4" id="requestCallForm" onsubmit="handleFormSubmit(event)">
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1" for="name">Name</label>
+<input class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="name" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1" for="phone">Phone Number</label>
+<input class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="phone" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1" for="interest">Interest</label>
+<select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="interest" required="">
+<option value="Career Options">Career Options</option>
+<option value="Volunteering">Volunteering</option>
+<option value="Not sure yet">Not sure yet</option>
+</select>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-xl font-bold shadow-lg hover:shadow-xl active:scale-[0.98] transition-all mt-4 hero-gradient" type="submit">
+                            Submit Request
+                        </button>
+</form>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Connectivity -->
 <section class="py-12 md:py-16 bg-surface-container-low">
 <div class="max-w-7xl mx-auto px-6">
 <div class="mb-12 text-center max-w-2xl mx-auto">
@@ -97,6 +126,7 @@
 <p class="text-on-surface-variant">Connecting employers across renewable energy, construction, and waste management with motivated candidates.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Item 1 - Renewable Energy (Spans 2 columns) -->
 <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl flex flex-col justify-between group overflow-hidden relative">
 <div class="relative z-10">
 <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
@@ -115,14 +145,18 @@
 <span class="material-symbols-outlined text-[200px] -mr-20 -mt-10" style='font-variation-settings: "FILL" 1;'>eco</span>
 </div>
 </div>
+<!-- Bento Item 2 - Sustainable Construction (1 column) -->
 <div class="bg-primary p-10 rounded-3xl text-on-primary flex flex-col justify-between hero-gradient">
 <div>
 <span class="material-symbols-outlined text-4xl mb-6">architecture</span>
 <h3 class="font-headline text-2xl font-bold mb-4">Sustainable Construction</h3>
 <p class="text-on-primary-container text-sm leading-relaxed">Bridge the gap between traditional building and carbon-neutral developments.</p>
 </div>
-
+<button class="mt-8 text-sm font-bold flex items-center gap-2 group">
+                            Learn more <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
 </div>
+<!-- Bento Item 3 - Waste Management (1 column) -->
 <div class="bg-surface-container-highest p-10 rounded-3xl flex flex-col justify-between">
 <div>
 <div class="w-12 h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center mb-6">
@@ -138,12 +172,14 @@
 <div class="w-10 h-10 rounded-full border-2 border-surface bg-primary-container flex items-center justify-center text-[10px] font-bold">+14</div>
 </div>
 </div>
+<!-- Bento Item 4 - Tailored Skills Assessments (Spans 2 columns) -->
 <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl border border-primary/5 relative overflow-hidden flex flex-col justify-center">
 <div class="flex flex-col md:flex-row gap-10 items-center">
 <div class="w-full">
 <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold tracking-widest uppercase rounded-full mb-4">New Feature</div>
 <h3 class="font-headline text-2xl font-bold mb-4">Tailored Skills Assessments</h3>
 <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Our proprietary diagnostic tool identifies CV gaps and suggests specific training modules to make you the ideal candidate.</p>
+<button class="px-6 py-3 bg-secondary text-white rounded-lg font-bold text-sm shadow-md hover:scale-102 transition-all">Identify Gaps</button>
 </div>
 </div>
 </div>
@@ -157,7 +193,7 @@
 <p class="text-emerald-100 text-sm md:text-lg mb-8 max-w-xl mx-auto">Join over 5,000 professionals already transitioning into the green economy.</p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
 <a class="px-8 py-4 bg-tertiary text-white rounded-full font-bold text-md hover:scale-105 transition-all" href="https://forms.gle/TmXsP7VHgy4ivL4q9" rel="noopener noreferrer" target="_blank">Start Your Journey</a>
-<a class="px-8 py-4 bg-transparent border border-white/50 rounded-full font-bold text-md hover:bg-white/10 transition-all" href="mailto:thomas@traingarden.co.uk" rel="noopener noreferrer" target="_blank">Talk to a Coach</a>
+<button class="px-8 py-4 bg-transparent border border-white/50 rounded-full font-bold text-md hover:bg-white/10 transition-all text-white" onclick="openRequestCallModal()">Request a Call</button><a class="px-8 py-4 bg-transparent border border-white/50 rounded-full font-bold text-md hover:bg-white/10 transition-all" href="mailto:thomas@traingarden.co.uk" rel="noopener noreferrer" target="_blank">Talk to a Coach</a>
 </div>
 </div>
 </div>
@@ -173,8 +209,47 @@
 </div>
 <div class="flex gap-4">
 <a href="https://substack.com/@traingarden" rel="noopener noreferrer" target="_blank"><img alt="Substack" class="w-5 h-5 opacity-70 hover:opacity-100" src="https://lh3.googleusercontent.com/aida/ADBb0uhRn1lf82yEPC4K_L-64uBpeWa5H14kitP2vVdXCDCgEsrxK9vrA_cmsAcR37sFVfwW6bNZXC63pwyuat3clCWslhbF95vRoe9YlLjfGgC3_MpGASzys3e8od60Q_O7u1xT62JBboIN2fnRU2wZtHMzRKzxuqmDFDzajvnrarWerlo_7Yy5QhCuCWAuteIjw53B8-K3MEJiZPBGeZhqvUc9TNKhCGAvyfDJxL5_fwmbTf6CJvWTuA8vU58A0Yd_1z_dyqkVOqz_HQ"/></a>
-<a href="https://www.facebook.com/share/1GdjzJ8DuA/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank"><img alt="Facebook" class="w-5 h-5 opacity-70 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6JzHOHd-wcZXHEM0AVh6UrUwAcEm9YwZUUh008nzM78Hy0MOWy0vsb60OvFnuURoeye9iprJnRkrLwyZtsJa_mxPOesTPvWOqqdeF7Wshm62jY8ez9SmdLe_ZKTbyck3qc3AMWtn-8Re7WxS2W8TZQUP7SALFaOC8uHnhbhyaeqWhnWRWSWAH6CHJgBZK9UQgri8Qdws_IP3l0KHd5ZhKjXwCQ3ay4dsreU2ROph0JYJZuaoBTQ0BwPzqnzzubfezfpVsjy99j8aD"/></a>
+<a href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank"><img alt="Facebook" class="w-5 h-5 opacity-70 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6JzHOHd-wcZXHEM0AVh6UrUwAcEm9YwZUUh008nzM78Hy0MOWy0vsb60OvFnuURoeye9iprJnRkrLwyZtsJa_mxPOesTPvWOqqdeF7Wshm62jY8ez9SmdLe_ZKTbyck3qc3AMWtn-8Re7WxS2W8TZQUP7SALFaOC8uHnhbhyaeqWhnWRWSWAH6CHJgBZK9UQgri8Qdws_IP3l0KHd5ZhKjXwCQ3ay4dsreU2ROph0JYJZuaoBTQ0BwPzqnzzubfezfpVsjy99j8aD"/></a>
 </div>
 </div>
 </footer>
+<script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const callModal = document.getElementById('call-modal');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function openRequestCallModal() {
+            callModal.classList.remove('hidden');
+            callModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeRequestCallModal() {
+            callModal.classList.add('hidden');
+            callModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            
+            const subject = encodeURIComponent(`Call Request: ${name} - ${interest}`);
+            const body = encodeURIComponent(`New call request received:\n\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\n\nSent from Train Garden Website.`);
+            
+            window.location.href = `mailto:thomas@traingarden.co.uk?subject=${subject}&body=${body}`;
+            closeRequestCallModal();
+        }
+
+        // Close modal when clicking outside content
+        callModal.addEventListener('click', (e) => {
+            if (e.target === callModal) closeRequestCallModal();
+        });
+    </script>
 </body></html>
