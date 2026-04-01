@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.symbols.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#005ab4",
+              "emerald-green": "#208a65",
+              "surface-container-high": "#e6e8f1",
+              "on-surface": "#181c22",
+              "surface-container-low": "#f2f3fd",
+              "on-surface-variant": "#414753",
+              "surface": "#f9f9ff",
+              "outline-variant": "#c1c6d5",
+              "background": "#ffffff"
+            },
+            fontFamily: {
+              "sans": ["Inter", "Arial", "sans-serif"],
+              "body": ["Inter", "Arial", "sans-serif"],
+              "headline": ["Inter", "Arial", "sans-serif"],
+              "label": ["Inter", "Arial", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- Shared Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-outline-variant px-10 py-3 bg-white h-20">
+<div class="flex items-center gap-2">
+<a class="w-[120px] flex items-center" href="index.html">
+<img alt="Train Garden Logo" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uirFeWiZlM1RLmYVcTqNHo1MbCanqut7fJIHFx75kZT02P6lqCLGRwNw9husx4bVECmMCwz1rDSwAFp9MERU4ye1-bnH7iOq7_M8g2vzrkcPpcLN5POsbzNZ6BghTlAwc9Gp6RJy0eIygt4SS39MBFAFqCRHlk1kTPjoNd0AhHOXE9VwIe-BgojBzEElvjwJTYycC3ciMZRdusDnsu6ae1H1p0fyWK9jru262cotRq5CP_kBVd7OtITcu9W-_RWU5_qITe93JwTqD0"/>
+</a>
+</div>
+<div class="flex flex-1 justify-end items-center gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-on-surface text-sm font-semibold leading-normal hover:text-emerald-green transition-colors" href="index.html">Home</a>
+<a class="text-on-surface text-sm font-semibold leading-normal hover:text-emerald-green transition-colors" href="jobseekers_page.html">Jobseekers</a>
+<a class="text-on-surface text-sm font-semibold leading-normal hover:text-emerald-green transition-colors" href="partners_page.html">Partners</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="bg-emerald-green hover:bg-emerald-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all" href="contact.html">Contact Us</a>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center justify-center min-h-[calc(100vh-80px)] p-6 bg-white">
+<!-- Hero Section -->
+<div class="w-full max-w-2xl mb-10 text-center">
+<h1 class="text-4xl md:text-5xl font-extrabold text-[#181c22] tracking-tight mb-4 font-headline">Volunteer Application</h1>
+<p class="text-on-surface-variant text-lg max-w-lg mx-auto leading-relaxed">
+                Join our digital arboretum and help us grow sustainable communities through technology and nature.
+            </p>
+</div>
+<!-- Form Container -->
+<section class="w-full max-w-xl bg-white rounded-xl border border-outline-variant shadow-[0_4px_20px_rgba(0,0,0,0.05)] overflow-hidden mb-12">
+<div class="p-8">
+<form action="mailto:thomas@traingarden.co.uk" class="flex flex-col gap-6" enctype="text/plain" id="volunteerForm" method="GET">
+<!-- Your Full Name -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-on-surface px-1 font-label" for="name">Your Full Name</label>
+<input class="flex w-full px-4 h-14 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-emerald-green focus:border-emerald-green text-on-surface transition-all placeholder:text-outline-variant" id="name" name="name" placeholder="John Appleseed" required="" type="text"/>
+</div>
+<!-- Opportunity Name -->
+<div class="flex flex-col gap-2"><label class="text-sm font-bold text-on-surface px-1 font-label" for="opportunity">Opportunity Name</label>
+<input class="flex w-full px-4 h-14 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-emerald-green focus:border-emerald-green text-on-surface transition-all placeholder:text-outline-variant font-medium" id="opportunity" name="opportunity" placeholder="Digital Gardener Lead" required="" type="text" value="Digital Gardener Lead"/></div>
+<!-- Email Address -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-on-surface px-1 font-label" for="email">Email</label>
+<input class="flex w-full px-4 h-14 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-emerald-green focus:border-emerald-green text-on-surface transition-all placeholder:text-outline-variant" id="email" name="email" placeholder="hello@example.com" required="" type="email"/>
+</div>
+<!-- Phone Number -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-on-surface px-1 font-label" for="phone">Phone Number</label>
+<input class="flex w-full px-4 h-14 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-emerald-green focus:border-emerald-green text-on-surface transition-all placeholder:text-outline-variant" id="phone" name="phone" placeholder="+44 7700 900000" required="" type="tel"/>
+</div>
+<!-- Submit Button -->
+<button class="mt-4 flex items-center justify-center gap-3 w-full h-14 bg-emerald-green hover:bg-emerald-700 text-white font-bold text-lg rounded-lg transition-all shadow-md active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="send">send</span>
+                        Submit Application
+                    </button>
+<p class="text-center text-[11px] text-on-surface-variant mt-2 font-medium">
+                        By submitting, you agree to our digital stewardship terms.
+                    </p>
+</form>
+</div>
+<!-- Bottom decorative card element -->
+<div class="h-1.5 w-full bg-gradient-to-r from-emerald-green via-primary to-primary/80"></div>
+</section>
+<!-- Decorative Arboretum Elements -->
+<div class="flex flex-wrap justify-center gap-12 opacity-40">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant" data-icon="potted_plant">potted_plant</span>
+<span class="text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Cultivate</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant" data-icon="rainy">rainy</span>
+<span class="text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Nurture</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant" data-icon="forest">forest</span>
+<span class="text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Expand</span>
+</div>
+</div>
+</main>
+<footer class="py-12 px-10 border-t border-outline-variant bg-white mt-auto">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<p class="text-on-surface text-sm font-semibold">© 2024 Train Garden Ltd.</p>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:opacity-80 transition-opacity" href="https://traingarden.substack.com" target="_blank">
+<img alt="Substack" class="size-6 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uiy9m483B86GbCGyCeO2bQqEbeD3VmrxGr_OEtOLkGVpeGUDwla5T31ujLu3gtKhmYKpB8cV_zyffO7n46Dpq2s-4fgknIu3OSkm-4hmtjbpnJlL-ONxwHOK1fjXJu5hsQkRsRzd5alfHzPBLjsPRsayRcq0nW4JcKURVLOsAz2KxxbnkcWT63CqySo6DHuipKjeUlJqkFTaIHH_xWOtHmRoFwE3as6lklr882VpIC0Cq0vZ0jAtimdbxnKQX8wR6Rmk7SxGNODAOw"/>
+</a>
+<a class="hover:opacity-80 transition-opacity" href="https://facebook.com/traingarden" target="_blank">
+<img alt="Facebook" class="size-6 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugbX-sakBqcKBARH_R7iQnva6kbuaXPTnTRnh1qZc0fVkKmdZ7bs_mkoTHRGPiLwZeLhz9p6Y2AsXCeCXI3ahY9OOGRdleumKlde1xOp_Om85BQAuOfimHLujiE18-bnJh9hPKhMzZVj4lBlV_m_NpbPP1vMG9lqgNnDvy7-Gj8Onf7xKNGbvaRo6mdHodmAeejUNtB5sq8shUgIrTwueg8csQAcC083DobnzR3rfRE9pwiPUXLxsTX4LGRQpjGaemsyANH1cHR4Hw"/>
+</a>
+</div>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface text-xs font-semibold hover:text-emerald-green transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface text-xs font-semibold hover:text-emerald-green transition-colors" href="#">Accessibility</a>
+<a class="text-on-surface text-xs font-semibold hover:text-emerald-green transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
