@@ -23,7 +23,8 @@
         <div class="flex justify-between items-center px-6 h-16 max-w-[1600px] mx-auto">
             <div class="flex items-center gap-4">
                 <a href="index.html" class="flex items-center">
-                    <img src="image_0.png" alt="Train Garden Logo" class="h-10 w-auto"/>
+<img alt="Train Garden Logo" class="h-6 md:h-7 w-auto" src="logo.png"/>
+
                 </a>
                 <div class="hidden sm:flex items-center gap-1.5 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
                     <span class="w-2 h-2 bg-amber-500 rounded-full demo-badge"></span>
@@ -52,19 +53,23 @@
                 <div class="space-y-2">
                     <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Role Comparison A</label>
                     <select id="role-select-1" class="w-full p-4 rounded-xl border-slate-200 bg-white shadow-sm text-sm font-semibold outline-none focus:ring-2 focus:ring-emerald-500">
+                        <option value="energy-adviser">Trainee Energy Adviser (Entry)</option>
+                        <option value="env-tech">Environmental Technician (Entry)</option>
                         <option value="sustainability-manager">Sustainability Manager</option>
-                        <option value="construction">Green Construction</option>
+                        <option value="retrofit-coord">Retrofit Coordinator</option>
                         <option value="landscaping" selected>Sustainable Landscaping</option>
-                        <option value="waste-management">Waste & Circular Economy</option>
+                        <option value="circular-economy">Circular Economy Strategist</option>
                     </select>
                 </div>
                 <div class="space-y-2">
                     <label class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Role Comparison B</label>
                     <select id="role-select-2" class="w-full p-4 rounded-xl border-slate-200 bg-white shadow-sm text-sm font-semibold outline-none focus:ring-2 focus:ring-emerald-500">
-                        <option value="sustainability-manager" selected>Sustainability Manager</option>
-                        <option value="construction">Green Construction</option>
+                        <option value="energy-adviser" selected>Trainee Energy Adviser (Entry)</option>
+                        <option value="env-tech">Environmental Technician (Entry)</option>
+                        <option value="sustainability-manager">Sustainability Manager</option>
+                        <option value="retrofit-coord">Retrofit Coordinator</option>
                         <option value="landscaping">Sustainable Landscaping</option>
-                        <option value="waste-management">Waste & Circular Economy</option>
+                        <option value="circular-economy">Circular Economy Strategist</option>
                     </select>
                 </div>
             </div>
@@ -140,10 +145,12 @@
         let extractedText = "";
 
         const demoData = {
+            "energy-adviser": { role: "Trainee Energy Adviser", salary: "£24k - £30k", demand: "High", skills: ["customer service", "energy bills", "insulation", "domestic heating", "communication"] },
+            "env-tech": { role: "Environmental Technician", salary: "£26k - £34k", demand: "Medium", skills: ["soil sampling", "data collection", "health and safety", "fieldwork", "gis"] },
             "sustainability-manager": { role: "Sustainability Manager", salary: "£45k - £65k", demand: "High", skills: ["esg reporting", "iso14001", "net zero strategy", "stakeholder engagement", "ghg protocol"] },
-            "construction": { role: "Green Construction", salary: "£35k - £50k", demand: "Critical", skills: ["retrofitting", "insulation", "passive house", "embodied carbon", "hpa"] },
+            "retrofit-coord": { role: "Retrofit Coordinator", salary: "£42k - £58k", demand: "Critical", skills: ["pas 2035", "thermal bridging", "heat loss calculations", "ventilation strategy", "project management"] },
             "landscaping": { role: "Sustainable Landscaping", salary: "£28k - £38k", demand: "High", skills: ["suds", "native planting", "soil health", "irrigation", "permeable"] },
-            "waste-management": { role: "Waste Management", salary: "£30k - £45k", demand: "Medium", skills: ["circular economy", "recycling", "hazardous waste", "composting", "diversion"] }
+            "circular-economy": { role: "Circular Economy Strategist", salary: "£50k - £80k", demand: "High", skills: ["lifecycle assessment", "resource efficiency", "extended producer responsibility", "supply chain mapping", "net zero"] }
         };
 
         // File handling
