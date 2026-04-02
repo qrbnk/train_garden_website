@@ -241,6 +241,214 @@
             </div>
         </div>
     </section>
+
+    <section class="mt-32">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl font-headline font-bold text-on-surface">Career Support Services</h2>
+        <p class="text-on-surface-variant">Expert tools to refine your professional presence.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-surface-container-lowest p-8 rounded-[2rem] soft-shadow border border-surface-container-high flex flex-col items-center text-center group transition-all hover:translate-y-[-4px]">
+    <div class="w-20 h-20 rounded-full bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-primary text-4xl">description</span>
+    </div>
+    <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Help with my CV</h3>
+    <p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+        Get expert feedback on your resume. Click below to email your CV directly to Thomas for a review.
+    </p>
+    
+    <a href="mailto:thomas@traingarden.co.uk?subject=I%20need%20help%20with%20cv%20for%20roles&body=Hi%20Thomas%2C%0A%0AI%20would%20like%20some%20feedback%20on%20my%20CV.%20I%20have%20attached%20it%20to%20this%20email.%0A%0AThank%20you!" 
+       class="mt-auto text-primary font-label font-bold text-xs tracking-widest uppercase flex items-center gap-2 hover:gap-3 transition-all">
+        Email My CV <span class="material-symbols-outlined text-sm">mail</span>
+    </a>
+</div>
+
+        <div class="bg-surface-container-lowest p-8 rounded-[2rem] soft-shadow border border-surface-container-high flex flex-col items-center text-center group transition-all hover:translate-y-[-4px]">
+            <div class="w-20 h-20 rounded-full bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-primary text-4xl">call</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Book a call</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-6"> Unsure how to transition into a career? Book a call with our experts.</p>
+            <button onclick="openQuizModal()" class="mt-auto text-primary font-label font-bold text-xs tracking-widest uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                Start Quiz <span class="material-symbols-outlined text-sm">quiz</span>
+            </button>
+        </div>
+
+        <div class="bg-surface-container-lowest p-8 rounded-[2rem] soft-shadow border border-surface-container-high flex flex-col items-center text-center group transition-all hover:translate-y-[-4px]">
+            <div class="w-20 h-20 rounded-full bg-secondary-container/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+            </div>
+            <h3 class="text-xl font-headline font-bold text-on-surface mb-3">Know what I could earn</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Understand your market value and salary expectations for green roles.</p>
+            <a href="tool.html" class="mt-auto text-primary font-label font-bold text-xs tracking-widest uppercase flex items-center gap-2 hover:gap-3 transition-all">
+                Go to Tool <span class="material-symbols-outlined text-sm">payments</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div id="quiz-modal" class="fixed inset-0 z-[100] hidden bg-brand-navy/40 backdrop-blur-sm flex items-center justify-center p-6">
+    <div class="bg-white w-full max-w-lg rounded-[2rem] overflow-hidden shadow-2xl relative">
+        <button onclick="closeQuizModal()" class="absolute top-6 right-6 text-slate-400 hover:text-primary">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="p-8">
+            <div id="modal-bot-container">
+                <p id="modal-bot-question" class="text-xl font-headline font-bold text-on-surface mb-6"></p>
+                <div id="modal-bot-options" class="flex flex-col gap-3"></div>
+                
+                <div id="modal-email-capture" class="hidden space-y-3">
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 mb-4">
+                        <p class="text-[10px] font-black text-emerald-800 uppercase tracking-widest mb-1">Recommended Path:</p>
+                        <p id="modal-match-display" class="font-bold text-primary"></p>
+                    </div>
+                    <input type="text" id="bot-user-name" placeholder="Your Name" class="w-full p-4 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 outline-none">
+                    <input type="email" id="bot-user-email" placeholder="Your Email Address" class="w-full p-4 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 outline-none">
+                    <input type="tel" id="bot-user-phone" placeholder="Your Phone Number" class="w-full p-4 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 outline-none">
+                    
+                    <button id="booking-submit-btn" onclick="submitQuizToFormspree()" class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-emerald-800 transition-all mt-4">
+                        Confirm Booking
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1) CV Upload Logic
+    function submitCVForm() {
+        const form = document.getElementById('cv-upload-form');
+        const btn = form.querySelector('button');
+        const originalText = btn.innerHTML;
+        btn.innerText = "Uploading...";
+        
+        const formData = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                alert('CV Sent to Thomas successfully!');
+                btn.innerHTML = originalText;
+            }
+        });
+    }
+
+    // 2) Quiz Modal Logic (Using endpoint: mzdkaede)
+    let modalQuizState = { strength: "", env: "", role: "Personal Career Roadmap Call" };
+    
+   const modalSteps = {
+        "start": {
+            q: "What is your core professional strength?",
+            opt: [
+                { t: "Strategy & Planning", n: "q2", f: "strength" },
+                { t: "Technical Operations", n: "q2", f: "strength" },
+                { t: "Communication", n: "q2", f: "strength" },
+                { t: "Unsure / Still Exploring", n: "q2", f: "strength" } // Added Unsure
+            ]
+        },
+        "q2": {
+            q: "Preferred work environment?",
+            opt: [
+                { t: "Corporate / Office", n: "final", f: "env" },
+                { t: "Outdoor / Field", n: "final", f: "env" },
+                { t: "Hybrid", n: "final", f: "env" },
+                { t: "Unsure / Flexible", n: "final", f: "env" } // Added Unsure
+            ]
+        },
+        "final": {
+            q: "Booking Details",
+            opt: [] 
+        }
+    };
+
+    function openQuizModal() {
+        document.getElementById('quiz-modal').classList.remove('hidden');
+        renderModalQuiz('start');
+    }
+
+    function closeQuizModal() {
+        document.getElementById('quiz-modal').classList.add('hidden');
+    }
+
+  function renderModalQuiz(id) {
+        const step = modalSteps[id];
+        const qEl = document.getElementById('modal-bot-question');
+        const oEl = document.getElementById('modal-bot-options');
+        const eEl = document.getElementById('modal-email-capture');
+
+        oEl.innerHTML = "";
+        eEl.classList.add('hidden');
+        qEl.innerText = step.q;
+        
+        if (id === "final") {
+            document.getElementById('modal-match-display').innerText = modalQuizState.role;
+            eEl.classList.remove('hidden');
+        } else {
+            step.opt.forEach(o => {
+                const b = document.createElement('button');
+                b.innerText = o.t;
+                
+                // UX Styling: Give "Unsure" options a slightly different look
+                const isUnsure = o.t.includes("Unsure");
+                const baseClasses = "w-full text-left p-4 rounded-xl font-bold transition-all border ";
+                const colorClasses = isUnsure 
+                    ? "bg-slate-50 text-slate-500 border-slate-200 hover:bg-slate-100" 
+                    : "bg-surface-container-low text-on-surface border-transparent hover:bg-emerald-50 hover:border-primary/20";
+                
+                b.className = baseClasses + colorClasses;
+                
+                b.onclick = () => {
+                    modalQuizState[o.f] = o.t;
+                    renderModalQuiz(o.n);
+                };
+                oEl.appendChild(b);
+            });
+        }
+    }
+
+    function submitQuizToFormspree() {
+        const name = document.getElementById('bot-user-name').value;
+        const email = document.getElementById('bot-user-email').value;
+        const phone = document.getElementById('bot-user-phone').value;
+        const btn = document.getElementById('booking-submit-btn');
+
+        if (!name || !email) return alert("Please fill in your name and email.");
+        btn.innerText = "Sending...";
+
+        const payload = {
+            Name: name,
+            Email: email,
+            Phone: phone,
+            Core_Strength: modalQuizState.strength,
+            Work_Environment: modalQuizState.env,
+            Request_Type: "Coaching Session Booking"
+        };
+
+        fetch("https://formspree.io/f/mzdkaede", {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        }).then(response => {
+            if(response.ok) {
+                document.getElementById('modal-bot-container').innerHTML = `
+                    <div class="text-center py-10">
+                        <span class="material-symbols-outlined text-primary text-6xl mb-4">check_circle</span>
+                        <h3 class="text-2xl font-headline font-bold">Booking Sent!</h3>
+                        <p class="text-on-surface-variant mt-2 px-4">Thomas will review your details and reach out shortly to schedule your call.</p>
+                        <button onclick="closeQuizModal()" class="mt-8 px-8 py-3 bg-primary text-white rounded-xl font-bold">Return to Career Map</button>
+                    </div>
+                `;
+            } else {
+                alert("Something went wrong. Please try again.");
+                btn.innerText = "Confirm Booking";
+            }
+        });
+    }
+</script>
 </main>
 
 <footer class="w-full py-12 border-t border-emerald-100 dark:border-emerald-900/30 bg-slate-50 dark:bg-slate-950">
