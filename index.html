@@ -2,9 +2,15 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Train Garden | Grow Your Skills</title>
+<title>Train Garden | Building Better Places, Together</title>
+<meta name="description" content="Train Garden is a SaaS platform connecting communities, local authorities and the built environment to achieve social value goals, with verified evidence behind every figure."/>
+<meta property="og:title" content="Train Garden | Building Better Places, Together"/>
+<meta property="og:description" content="Social value that is automated, visual and no longer a tick box."/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#091747"/>
+<script>document.documentElement.classList.add('js');</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -12,207 +18,696 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#091747",
+                        "primary": "#8867AD",
                         "primary-container": "#0873df",
-                        "secondary": "#465f89",
-                        "tertiary": "#208a65",
+                        "secondary": "#8867AD",
+                        "tertiary": "#478B8D",
+                        "emerald": { 50: "#478B8D", 100: "#478B8D", 200: "#478B8D", 300: "#478B8D", 400: "#478B8D", 500: "#478B8D", 600: "#478B8D", 700: "#478B8D", 800: "#478B8D", 900: "#478B8D" },
                         "surface": "#f9f9ff",
-                        "on-surface": "#181c22",
-                        "on-primary": "#ffffff",
-                        "surface-container-low": "#f2f3fd",
-                        "outline-variant": "#c1c6d5"
+                        "soft": "#f2f3fd",
+                        "ink": "#10131a",
+                        "on-primary": "#ffffff"
                     },
                     fontFamily: {
-                        headline: ["Inter", "sans-serif"],
-                        body: ["Inter", "sans-serif"]
+                        headline: ["Raleway", "sans-serif"],
+                        body: ["Raleway", "sans-serif"]
                     }
                 }
             }
         };
     </script>
-<style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-        .hero-gradient { background: linear-gradient(135deg, #052875 0%, #35157a 100%); }
-        /* Custom animation for the mobile creative link */
-        @keyframes pulse-soft { 0%, 100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); } 50% { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.3); } }
-        .mobile-fab-pulse { animation: pulse-soft 2s infinite ease-in-out; }
-         @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-        .ai-shimmer { background: linear-gradient(90deg, #7dafd8, #498ba9, #b2b1b7); background-size: 200% 100%; animation: shimmer 3s infinite linear; }
-    </style>
+<style type="text/tailwindcss">
+  @layer components {
+    .eyebrow { @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-700 mb-4; }
+    .eyebrow::before { content: ""; width: 1.5rem; height: 2px; background: currentColor; display: inline-block; }
+    .eyebrow-light { @apply text-white; }
+    .h2 { @apply font-headline text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1] text-ink; }
+    .lead { @apply mt-4 text-base md:text-lg text-slate-600 leading-relaxed; }
+    .btn { @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm md:text-base transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600; }
+    .btn-primary { @apply btn text-white shadow-lg hover:-translate-y-0.5 hover:shadow-xl; background: linear-gradient(135deg, #052875 0%, #35157a 100%); }
+    .btn-green { @apply btn text-white bg-tertiary shadow-lg hover:-translate-y-0.5 hover:shadow-xl; }
+    .btn-outline { @apply btn bg-white border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white; }
+    .card { @apply bg-white rounded-3xl border border-slate-200 transition-all duration-200; }
+    .card-hover { @apply hover:-translate-y-1 hover:shadow-xl hover:border-emerald-600; }
+    .icon-box { @apply w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0; }
+    .tag { @apply inline-flex self-start px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full; }
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .hero-gradient { background: linear-gradient(135deg, #052875 0%, #35157a 100%); }
+  html { scroll-behavior: smooth; }
+  /* Scroll reveal: only hidden when JS is running */
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .reveal.d1 { transition-delay: .08s; } .js .reveal.d2 { transition-delay: .16s; } .js .reveal.d3 { transition-delay: .24s; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .float-a { animation: float 6s ease-in-out infinite; } .float-b { animation: float 7s ease-in-out infinite .8s; }
+  .nav-link.active { color: #15857A; }
+  details > summary { list-style: none; } details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .float-a, .float-b { animation: none; }
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Train Garden","url":"https://traingarden.co.uk","email":"info@traingarden.co.uk","slogan":"Building Better Places, Together."}
+</script>
 </head>
-<body class="bg-surface font-body text-on-surface">
+<body class="bg-surface font-body text-ink antialiased pb-20 lg:pb-0">
 
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
 
-<div class="md:hidden fixed bottom-6 right-6 z-[100] flex flex-col gap-3 items-end">
-    <a href="explore_with_ai.html" class="flex items-center gap-2 bg-emerald-600 ai-shimmer text-white px-5 py-4 rounded-full shadow-2xl active:scale-95 transition-transform">
-        <span class="material-symbols-outlined">psychology</span>
-        <span class="font-bold text-xs uppercase tracking-wider">Explore with AI</span>
-    </a>
-    
-    <a href="tool.html" class="flex items-center gap-2 bg-emerald-700 text-white px-5 py-4 rounded-full shadow-2xl mobile-fab-pulse active:scale-95 transition-transform">
-        <span class="material-symbols-outlined">analytics</span>
-        <span class="font-bold text-xs uppercase tracking-wider">Scan CV</span>
-    </a>
-</div>
-
-<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav" class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-shadow">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
-<a href="/" rel="noopener noreferrer">
+<a href="/" rel="noopener noreferrer" aria-label="Train Garden home">
 <img alt="Train Garden Logo" class="h-6 md:h-7 w-auto" src="logo.png"/>
 </a>
-<div class="hidden md:flex gap-6 items-center">
-<a class="font-bold text-emerald-700 border-b-2 border-emerald-700 pb-1" href="/">Home</a>
-<a class="text-slate-600 hover:text-emerald-800 transition-colors font-medium text-sm" href="jobseekers_page.html" >Jobseekers</a>
-<a class="text-slate-600 hover:text-emerald-800 transition-colors font-medium text-sm" href="partners_page.html" >Partners</a>
-<a class="text-slate-600 hover:text-emerald-800 transition-colors font-medium text-sm" href="resources_page.html" >Resources</a>
-<a class="px-5 py-2 bg-primary text-white rounded-lg font-bold text-sm ml-2" href="mailto:thomas@traingarden.co.uk" rel="noopener noreferrer" target="_blank">Contact Us</a>
+<div class="hidden lg:flex gap-7 items-center">
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#mission">Mission</a>
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#services">Our Services</a>
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#business-model">Pricing</a>
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#use-cases">Real Life Use</a>
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#customers">Our Customers</a>
+<a class="nav-link text-slate-700 hover:text-emerald-700 transition-colors font-medium text-sm" href="#about">About Us</a>
+<a class="btn-primary !px-5 !py-2 !text-sm !rounded-lg" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
 </div>
-<button class="md:hidden p-2 text-primary active:scale-90 transition-transform" id="menu-btn">
+<button class="lg:hidden p-2 text-primary active:scale-90 transition-transform" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
-<div class="hidden md:hidden bg-white border-b border-gray-100 flex flex-col p-6 gap-4 shadow-lg" id="mobile-menu">
-<a class="font-bold text-emerald-700 text-lg" href="/" rel="noopener noreferrer">Home</a>
-<a class="text-slate-600 font-medium text-lg" href="jobseekers_page.html" >Jobseekers</a>
-<a class="text-slate-600 font-medium text-lg" href="partners_page.html" >Partners</a>
-<a class="text-slate-600 font-medium text-lg" href="resources_page.html" >Resources</a>
-<a class="text-primary font-bold text-lg" href="mailto:thomas@traingarden.co.uk" >Contact Us</a>
+<div class="hidden lg:hidden bg-white border-b border-slate-200 flex flex-col p-6 gap-4 shadow-lg" id="mobile-menu">
+<a class="text-slate-700 font-medium text-lg" href="#mission">Mission</a>
+<a class="text-slate-700 font-medium text-lg" href="#services">Our Services</a>
+<a class="text-slate-700 font-medium text-lg" href="#business-model">Pricing</a>
+<a class="text-slate-700 font-medium text-lg" href="#use-cases">Real Life Use</a>
+<a class="text-slate-700 font-medium text-lg" href="#customers">Our Customers</a>
+<a class="text-slate-700 font-medium text-lg" href="#about">About Us</a>
+<a class="text-slate-700 font-medium text-lg" href="#faq">FAQ</a>
+<a class="btn-primary" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
 </div>
 </nav>
-<main class="pt-16">
-<section class="relative overflow-hidden bg-surface py-12 md:py-20">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-<div class="lg:col-span-7 z-10 text-center md:text-left">
-<span class="inline-block font-bold tracking-[0.2em] mb-4 uppercase text-emerald-700 text-xs md:text-sm">The Future is Green</span>
-<h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-on-surface leading-tight tracking-tight mb-6">
-                    Grow Your Skills with <br class="hidden md:block"/> <span class="italic text-emerald-700">Train Garden</span>
+
+<main id="main" class="pt-16">
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="relative overflow-hidden bg-surface pt-12 pb-28 md:pt-20 md:pb-36">
+<div class="absolute -top-32 -right-32 w-[34rem] h-[34rem] rounded-full bg-emerald-600/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-40 -left-32 w-[30rem] h-[30rem] rounded-full bg-indigo-200/40 blur-3xl pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 z-10 text-center lg:text-left">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-[0.15em] mb-6">
+<span class="material-symbols-outlined text-[16px]">eco</span> Social value, automated
+</span>
+<h1 class="font-headline text-4xl md:text-6xl lg:text-7xl font-black text-ink leading-[1.05] tracking-tight mb-6">
+Social value that is automated, visual and <span class="italic text-emerald-700">no longer a tick box</span>
 </h1>
-<p class="text-base md:text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0 leading-relaxed">
-                    A green skills and recruitment platform designed to strengthen the talent pipeline for the growing green economy.
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start">
-<a class="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-md shadow-lg hero-gradient text-center" href="https://forms.gle/TmXsP7VHgy4ivL4q9" rel="noopener noreferrer" target="_blank">Start Your Journey</a>
-<a class="flex items-center gap-2 px-8 py-4 bg-white border-2 border-emerald-600 text-emerald-700 rounded-xl font-bold text-md hover:bg-emerald-50 transition-all text-center" href="tool.html">
-    <span class="material-symbols-outlined">analytics</span> Analyze My Skills
+<p class="text-base md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+Train Garden connects communities, local authorities and the built environment to achieve social value goals, with verified evidence behind every figure.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+<a class="btn-primary w-full sm:w-auto" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">Book a Demo <span class="material-symbols-outlined text-[20px]">arrow_forward</span></a>
+<a class="btn-outline w-full sm:w-auto" href="#how">See how it works</a>
+</div>
+<ul class="mt-8 flex flex-wrap gap-x-6 gap-y-2 justify-center lg:justify-start text-sm text-slate-600">
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span> Free for communities</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span> Evidence built automatically</li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span> Aligned to local plans</li>
+</ul>
+</div>
+<div class="hidden lg:block lg:col-span-5 relative">
+<div class="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+<svg viewBox="0 0 640 480" class="w-full h-full block bg-white" role="img" aria-labelledby="tg-d-t" xmlns="http://www.w3.org/2000/svg">
+<title id="tg-d-t">Local area and community, connecting community users, local authorities, community organisations and the built environment</title>
+<style>
+.tg-d text{font-family:Inter,sans-serif}
+.tg-flow{stroke-dasharray:7 7;animation:tgFlow 1.4s linear infinite}
+.tg-pulse{transform-box:fill-box;transform-origin:center;animation:tgPulse 3.6s ease-in-out infinite}
+.tg-ring{transform-box:fill-box;transform-origin:center;fill:none;stroke:#35157a;stroke-width:2;opacity:0;animation:tgRing 3.6s ease-out infinite}
+.tg-ring.r2{animation-delay:1.8s}
+.tg-node{animation:tgBob 5s ease-in-out infinite}
+.tg-node.n2{animation-delay:-1.2s}.tg-node.n3{animation-delay:-2.4s}.tg-node.n4{animation-delay:-3.6s}
+@keyframes tgFlow{to{stroke-dashoffset:-14}}
+@keyframes tgPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes tgRing{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.7);opacity:0}}
+@keyframes tgBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media (prefers-reduced-motion:reduce){.tg-flow,.tg-pulse,.tg-ring,.tg-node{animation:none}.tg-ring,.tg-dot{display:none}}
+</style>
+<defs>
+<radialGradient id="tg-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#35157a" stop-opacity=".14"/><stop offset="1" stop-color="#35157a" stop-opacity="0"/></radialGradient>
+<linearGradient id="tg-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#052875"/><stop offset="1" stop-color="#35157a"/></linearGradient>
+<marker id="tg-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#10131a"/></marker>
+</defs>
+<g class="tg-d">
+<circle cx="320" cy="235" r="210" fill="url(#tg-glow)"/>
+<circle class="tg-ring" cx="320" cy="235" r="88"/>
+<circle class="tg-ring r2" cx="320" cy="235" r="88"/>
+<g fill="none" stroke="#10131a" stroke-width="1.6" marker-end="url(#tg-arr)">
+<line class="tg-flow" x1="125" y1="75" x2="247" y2="175"/>
+<line class="tg-flow" x1="525" y1="165" x2="409" y2="205"/>
+<line class="tg-flow" x1="115" y1="320" x2="233" y2="271"/>
+<line class="tg-flow" x1="520" y1="400" x2="392" y2="295"/>
+</g>
+<circle class="tg-dot" r="4.5" fill="#35157a" stroke="#fff" stroke-width="1.5"><animateMotion dur="3s" repeatCount="indefinite" path="M125 75L247 175"/></circle>
+<circle class="tg-dot" r="4.5" fill="#35157a" stroke="#fff" stroke-width="1.5"><animateMotion dur="3s" begin="0.75s" repeatCount="indefinite" path="M525 165L409 205"/></circle>
+<circle class="tg-dot" r="4.5" fill="#35157a" stroke="#fff" stroke-width="1.5"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M115 320L233 271"/></circle>
+<circle class="tg-dot" r="4.5" fill="#35157a" stroke="#fff" stroke-width="1.5"><animateMotion dur="3s" begin="2.25s" repeatCount="indefinite" path="M520 400L392 295"/></circle>
+<g class="tg-pulse">
+<circle cx="320" cy="235" r="88" fill="url(#tg-grad)"/>
+<text x="320" y="218" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-style="italic" letter-spacing="1">LOCAL AREA</text>
+<text x="320" y="245" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-style="italic" letter-spacing="1">AND</text>
+<text x="320" y="272" text-anchor="middle" fill="#fff" font-size="22" font-weight="800" font-style="italic" letter-spacing="1">COMMUNITY</text>
+</g>
+<g class="tg-node n1"><rect x="50" y="48" width="150" height="54" rx="14" fill="#fff" stroke="#15857A" stroke-width="2"/><text x="125" y="71" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">COMMUNITY</text><text x="125" y="88" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">USERS</text></g>
+<g class="tg-node n2"><rect x="450" y="138" width="150" height="54" rx="14" fill="#fff" stroke="#15857A" stroke-width="2"/><text x="525" y="161" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">LOCAL</text><text x="525" y="178" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">AUTHORITIES</text></g>
+<g class="tg-node n3"><rect x="40" y="293" width="150" height="54" rx="14" fill="#fff" stroke="#15857A" stroke-width="2"/><text x="115" y="316" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">COMMUNITY</text><text x="115" y="333" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">ORGANISATIONS</text></g>
+<g class="tg-node n4"><rect x="445" y="373" width="150" height="54" rx="14" fill="#fff" stroke="#15857A" stroke-width="2"/><text x="520" y="396" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">BUILT</text><text x="520" y="413" text-anchor="middle" fill="#15857A" font-size="13" font-weight="800" letter-spacing="1.2">ENVIRONMENT</text></g>
+</g>
+</svg>
+</div>
+<div class="float-a absolute -left-8 -bottom-8 bg-white rounded-2xl shadow-xl border border-slate-100 px-5 py-4">
+<p class="font-headline text-3xl font-black text-primary leading-none">97p</p>
+<p class="text-xs text-slate-500 mt-1 max-w-[9.5rem] leading-snug">of every £1 of social value delivered goes on local jobs and spend</p>
+</div>
+<div class="float-b absolute -right-4 -top-6 bg-white rounded-2xl shadow-xl border border-slate-100 px-5 py-4">
+<p class="font-headline text-3xl font-black text-emerald-700 leading-none">+43%</p>
+<p class="text-xs text-slate-500 mt-1 max-w-[9.5rem] leading-snug">training and apprenticeship weeks, year on year</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ FIND WHAT YOU NEED ═══════════════ -->
+<section class="relative -mt-20 md:-mt-24 pb-12 md:pb-16 z-20">
+<div class="max-w-7xl mx-auto px-6">
+<p class="reveal text-center text-xs font-bold uppercase tracking-[0.18em] text-slate-500 mb-4">Find what you need</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a href="#customer-la" class="reveal card card-hover p-6 shadow-lg group flex flex-col">
+<div class="icon-box mb-4"><span class="material-symbols-outlined">account_balance</span></div>
+<h3 class="font-headline text-lg font-bold mb-1">I'm a local authority</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">Understand your borough and make social value count in every contract.</p>
+<span class="mt-auto text-sm font-bold text-emerald-700 flex items-center gap-1">Explore <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
 </a>
-<div class="flex items-center gap-4">
-    <div class="hidden sm:block h-10 w-[1px] bg-slate-200"></div>
-    <div class="flex flex-col items-start">
-        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Partnered with</span>
-        <a href="https://ingeus.co.uk/" rel="noopener noreferrer" target="_blank" class="hover:opacity-80 transition-opacity">
-            <img alt="Ingeus Logo" class="h-6 md:h-8 w-auto" src="ingeus_logo.png"/>
-        </a>
-    </div>
-</div>
-</div>
-</div>
-<div class="hidden md:block lg:col-span-5 relative flex justify-center items-center">
-<div class="relative rounded-3xl overflow-hidden shadow-2xl" style="box-sizing: border-box; display: inline-block; height: 320.39px; width: 480.59px; max-width: 100%; margin: 0; padding: 0;">
-<img alt="Nature themed background" class="w-full h-full object-cover" src="nature.png" style="display: block;"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-</div>
-<a class="inline-flex items-center justify-center gap-2 px-5 py-3 bg-emerald-600 ai-shimmer text-white rounded-xl font-bold text-lg shadow-lg hover:scale-105 transition-all text-center min-w-[200px]" href="explore_with_ai.html" target="_blank">
-    <span class="material-symbols-outlined">psychology</span> 
-    Explore with AI
+<a href="#customer-dev" class="reveal d1 card card-hover p-6 shadow-lg group flex flex-col">
+<div class="icon-box mb-4"><span class="material-symbols-outlined">apartment</span></div>
+<h3 class="font-headline text-lg font-bold mb-1">I'm a developer or contractor</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">Win and deliver tenders with automated, evidenced social value reporting.</p>
+<span class="mt-auto text-sm font-bold text-emerald-700 flex items-center gap-1">Explore <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
+</a>
+<a href="#customer-svp" class="reveal d2 card card-hover p-6 shadow-lg group flex flex-col">
+<div class="icon-box mb-4"><span class="material-symbols-outlined">volunteer_activism</span></div>
+<h3 class="font-headline text-lg font-bold mb-1">I work in social value</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">Promote initiatives, maximise buy-in and track your social value goals.</p>
+<span class="mt-auto text-sm font-bold text-emerald-700 flex items-center gap-1">Explore <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
+</a>
+<a href="#plan-community" class="reveal d3 card card-hover p-6 shadow-lg group flex flex-col">
+<div class="icon-box mb-4"><span class="material-symbols-outlined">groups</span></div>
+<h3 class="font-headline text-lg font-bold mb-1">I live or work locally</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-4">Discover local opportunities and track your own progress. Always free.</p>
+<span class="mt-auto text-sm font-bold text-emerald-700 flex items-center gap-1">Explore <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
 </a>
 </div>
 </div>
 </section>
-<section class="py-12 md:py-16 bg-surface-container-low">
+
+<!-- ═══════════════ MARKET STATS ═══════════════ -->
+<section id="market" class="hero-gradient text-white py-14 md:py-20">
 <div class="max-w-7xl mx-auto px-6">
-<div class="mb-12 text-center max-w-2xl mx-auto">
-<h2 class="font-headline text-3xl md:text-4xl font-bold mb-4 tracking-tight">Connected by Purpose</h2>
-<p class="text-on-surface-variant">Connecting employers across renewable energy, construction, and waste management with motivated candidates.</p>
+<div class="reveal max-w-3xl mb-12">
+<span class="eyebrow eyebrow-light">UK social value market · 2025</span>
+<h2 class="font-headline text-3xl md:text-5xl font-extrabold leading-[1.1] tracking-tight">The market is growing. <span class="italic text-white">The reporting hasn't caught up.</span></h2>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+<div class="reveal bg-white/10 backdrop-blur rounded-3xl p-6 md:p-8 border border-white/10">
+<p class="font-headline text-4xl md:text-5xl font-black tracking-tight">£1.10bn</p>
+<p class="text-sm text-white/80 mt-3 leading-snug">of social value delivered across 445 projects</p>
+</div>
+<div class="reveal d1 bg-white/10 backdrop-blur rounded-3xl p-6 md:p-8 border border-white/10">
+<p class="font-headline text-4xl md:text-5xl font-black tracking-tight">£4.98bn</p>
+<p class="text-sm text-white/80 mt-3 leading-snug">total contract value, up 13.6% and the highest in four years</p>
+</div>
+<div class="reveal d2 bg-white/10 backdrop-blur rounded-3xl p-6 md:p-8 border border-white/10">
+<p class="font-headline text-4xl md:text-5xl font-black tracking-tight">97p</p>
+<p class="text-sm text-white/80 mt-3 leading-snug">of every £1 delivered goes on local jobs and spend</p>
+</div>
+<div class="reveal d3 bg-white/10 backdrop-blur rounded-3xl p-6 md:p-8 border border-white/10">
+<p class="font-headline text-4xl md:text-5xl font-black tracking-tight">+43%</p>
+<p class="text-sm text-white/80 mt-3 leading-snug">training and apprenticeship weeks, from 28,262 to 40,531</p>
+</div>
+</div>
+<p class="reveal text-sm text-white/70 mt-8 max-w-3xl leading-relaxed">That is £0.22 of social value for every £1 of contract value, with average project value up from £10.5m to £11.2m. The sector is moving to report outcomes over monetised values, and training and apprenticeship delivery per £1m of contract value is up 26%.</p>
+</div>
+</section>
+
+<!-- ═══════════════ SECTORS ═══════════════ -->
+<section class="py-10 bg-white border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+<p class="text-xs font-bold uppercase tracking-[0.18em] text-slate-500 shrink-0">Working across</p>
+<div class="flex flex-wrap gap-3">
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft text-sm font-semibold"><span class="material-symbols-outlined text-primary text-[20px]">solar_power</span> Renewable energy</span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft text-sm font-semibold"><span class="material-symbols-outlined text-primary text-[20px]">architecture</span> Sustainable construction</span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft text-sm font-semibold"><span class="material-symbols-outlined text-primary text-[20px]">recycling</span> Waste management</span>
+<span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-soft text-sm font-semibold"><span class="material-symbols-outlined text-primary text-[20px]">domain</span> Urban regeneration</span>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ PROBLEM ═══════════════ -->
+<section id="problem" class="py-16 md:py-24 bg-surface scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal max-w-3xl mb-12">
+<span class="eyebrow !text-orange-600">The problem</span>
+<h2 class="h2">Candidates wait, authorities lack insight, building developers drown in process.</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl flex flex-col justify-between group overflow-hidden relative">
-<div class="relative z-10">
-<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">solar_power</span>
+<div class="reveal card p-8">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-4">Community members</p>
+<p class="font-headline text-4xl font-black text-primary mb-3">8–12 months</p>
+<h3 class="font-headline text-lg font-bold mb-2">to find a role in the UK job market</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Skills gaps, credential and confidence barriers, and candidates overlooked by ATS systems.</p>
 </div>
-<h3 class="font-headline text-2xl font-bold mb-4">Renewable Energy</h3>
-<p class="text-on-surface-variant mb-8 max-w-md">Access exclusive opportunities in wind, solar, and tidal energy infrastructure with leading global firms.</p>
+<div class="reveal d1 card p-8">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-4">Local authorities</p>
+<p class="font-headline text-4xl font-black text-primary mb-3">Goals missed</p>
+<h3 class="font-headline text-lg font-bold mb-2">Social value goals not achieved</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Limited understanding of public needs. Funding is available across multiple programmes but with no resolution. Low public engagement.</p>
 </div>
-<div class="flex items-center gap-4 z-10 mt-auto">
-<span class="text-sm font-bold text-primary">1.2k Open Roles</span>
-<div class="h-1 w-24 bg-surface-container-high rounded-full overflow-hidden">
-<div class="bg-primary h-full w-3/4"></div>
+<div class="reveal d2 card p-8">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-4">Developers &amp; contractors</p>
+<p class="font-headline text-4xl font-black text-primary mb-3">Manual</p>
+<h3 class="font-headline text-lg font-bold mb-2">Inefficient reporting</h3>
+<p class="text-sm text-slate-600 leading-relaxed">A lack of interest in social value, and a complicated process that is not efficient.</p>
 </div>
 </div>
-<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-[200px] -mr-20 -mt-10" style='font-variation-settings: "FILL" 1;'>eco</span>
+</div>
+</section>
+
+<!-- ═══════════════ MISSION ═══════════════ -->
+<section id="mission" class="py-16 md:py-24 bg-white scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal max-w-4xl mb-14">
+<span class="eyebrow">Our mission</span>
+<h2 class="font-headline text-3xl md:text-6xl font-black tracking-tight leading-[1.08]">Maximise social value. <span class="text-emerald-700">Empower local communities.</span> Accelerate locally impactful developments.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="reveal bg-soft rounded-3xl p-8">
+<span class="font-headline text-5xl font-black text-emerald-600">01</span>
+<h3 class="font-headline text-xl font-bold mt-2 mb-2">Maximise social value</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Social value that is automated and visual, shaping how places are planned, delivered and reported.</p>
+</div>
+<div class="reveal d1 bg-soft rounded-3xl p-8">
+<span class="font-headline text-5xl font-black text-emerald-600">02</span>
+<h3 class="font-headline text-xl font-bold mt-2 mb-2">Empower local communities</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Free, personalised pathways into local opportunity, and a real voice in the developments around them.</p>
+</div>
+<div class="reveal d2 bg-soft rounded-3xl p-8">
+<span class="font-headline text-5xl font-black text-emerald-600">03</span>
+<h3 class="font-headline text-xl font-bold mt-2 mb-2">Accelerate locally impactful developments</h3>
+<p class="text-slate-600 text-sm leading-relaxed">Data-led needs assessments so projects are shaped by real local need and carry community buy-in.</p>
 </div>
 </div>
-<div class="bg-primary p-10 rounded-3xl text-on-primary flex flex-col justify-between hero-gradient">
+</div>
+</section>
+
+<!-- ═══════════════ PLATFORM / SOLUTION ═══════════════ -->
+<section id="platform" class="py-16 md:py-24 bg-soft scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal max-w-3xl mb-14">
+<span class="eyebrow">The solution</span>
+<h2 class="h2">One platform. <span class="italic text-emerald-700">Four groups. One local area.</span></h2>
+<p class="lead">Train Garden is a SaaS platform connecting communities, local authorities and the built environment across the UK economy. It streamlines local area and demographic assessments, promotes community buy-in and impact, and evidences social value outcomes for tenders and bids.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+<div class="flex flex-col gap-6">
+<div class="reveal card p-6 flex items-center gap-4"><div class="icon-box"><span class="material-symbols-outlined">groups</span></div><h3 class="font-headline text-lg font-bold">Community users</h3></div>
+<div class="reveal d1 card p-6 flex items-center gap-4"><div class="icon-box"><span class="material-symbols-outlined">diversity_3</span></div><h3 class="font-headline text-lg font-bold">Community organisations</h3></div>
+</div>
+<div class="reveal d1 flex justify-center">
+<div class="w-56 h-56 md:w-64 md:h-64 rounded-full hero-gradient text-white flex flex-col items-center justify-center text-center p-6 shadow-2xl ring-8 ring-white">
+<span class="material-symbols-outlined text-4xl mb-2">location_on</span>
+<p class="font-headline text-xl md:text-2xl font-extrabold uppercase leading-tight tracking-tight">Local area<br/>&amp; community</p>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="reveal card p-6 flex items-center gap-4"><div class="icon-box"><span class="material-symbols-outlined">account_balance</span></div><h3 class="font-headline text-lg font-bold">Local authorities</h3></div>
+<div class="reveal d1 card p-6 flex items-center gap-4"><div class="icon-box"><span class="material-symbols-outlined">apartment</span></div><h3 class="font-headline text-lg font-bold">Built environment</h3></div>
+</div>
+</div>
+
+<div class="reveal mt-20 mb-8 max-w-3xl">
+<span class="eyebrow">The vision</span>
+<h3 class="font-headline text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">Social value that is automated, visual and no longer a tick box.</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="reveal card p-8 md:p-10">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-3">Developers &amp; contractors</p>
+<h4 class="font-headline text-2xl font-bold mb-3">Not a tick box anymore</h4>
+<p class="text-slate-600 leading-relaxed">Social value is automated and visual, so it shapes how you plan, deliver and report.</p>
+</div>
+<div class="reveal d1 card p-8 md:p-10">
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-3">Local authorities</p>
+<h4 class="font-headline text-2xl font-bold mb-3">An easier bidding process</h4>
+<p class="text-slate-600 leading-relaxed">Streamlined social value assessment and contract awards, with increased public engagement.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ OUR SERVICES ═══════════════ -->
+<section id="services" class="py-16 md:py-24 bg-surface scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal mb-12 max-w-3xl">
+<span class="eyebrow">Our services</span>
+<h2 class="h2">Three tools. <span class="italic text-emerald-700">One platform.</span></h2>
+<p class="lead">From understanding a place, to connecting people to it, to proving the social value delivered.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="reveal card card-hover p-8 md:p-10 flex flex-col">
+<div class="icon-box mb-6"><span class="material-symbols-outlined">map</span></div>
+<h3 class="font-headline text-2xl font-extrabold mb-4">Community Needs Assessment Tool</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">A data-led geographic assessment of local socioeconomic indicators, community dynamics and stakeholders, to guide development decision-making. Local data can be uploaded to fill gaps, then shared across stakeholders.</p>
+<p class="mt-auto text-xs font-bold uppercase tracking-wider text-emerald-700">For stakeholders &amp; local authorities</p>
+</div>
+<div class="reveal d1 card card-hover p-8 md:p-10 flex flex-col">
+<div class="icon-box mb-6"><span class="material-symbols-outlined">alt_route</span></div>
+<h3 class="font-headline text-2xl font-extrabold mb-4">Interactive User Interface</h3>
+<p class="text-slate-600 text-sm leading-relaxed mb-6">A clear, personalised development pathway matched to real local opportunity. It connects people to local opportunities, including benefits delivered through development-led social value plans, and lets them track progress towards their personal goals.</p>
+<p class="mt-auto text-xs font-bold uppercase tracking-wider text-emerald-700">For residents &amp; job seekers</p>
+</div>
+<div class="reveal d2 hero-gradient text-white rounded-3xl p-8 md:p-10 flex flex-col shadow-xl">
+<span class="material-symbols-outlined text-4xl mb-6 text-white">verified</span>
+<h3 class="font-headline text-2xl font-extrabold mb-4">Social Value Evaluation Tool</h3>
+<p class="text-sm leading-relaxed text-white/80 mb-6">Captures and evaluates user interactions and their social value impact. Runs the tender-support engine automatically in the background and surfaces a ready-to-submit report on demand, aligned with social value legislation and procedures.</p>
+<p class="mt-auto text-xs font-bold uppercase tracking-wider text-white">For companies &amp; local authorities</p>
+</div>
+</div>
+
+<div id="how" class="scroll-mt-24 reveal mt-20 mb-8 max-w-3xl">
+<span class="eyebrow">How it works · for companies</span>
+<h3 class="font-headline text-2xl md:text-4xl font-extrabold tracking-tight leading-tight">Bidding on a tender with social value requirements? We'll help you draft the proposal, or track delivery once you've won, with real, verified evidence behind every figure.</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+<div class="reveal card p-6 flex flex-col"><span class="font-headline text-4xl font-black text-emerald-600 mb-3">01</span><h4 class="font-headline text-base font-bold mb-2">Paste what you committed to</h4><p class="text-sm text-slate-600 leading-relaxed">Paste the social value commitments from the awarded tender, exactly as written.</p></div>
+<div class="reveal d1 card p-6 flex flex-col"><span class="font-headline text-4xl font-black text-emerald-600 mb-3">02</span><h4 class="font-headline text-base font-bold mb-2">We propose a fulfilment plan</h4><p class="text-sm text-slate-600 leading-relaxed">Concrete solutions and realistic timeframes for each criterion you committed to.</p></div>
+<div class="reveal d2 card p-6 flex flex-col"><span class="font-headline text-4xl font-black text-emerald-600 mb-3">03</span><h4 class="font-headline text-base font-bold mb-2">You review and accept</h4><p class="text-sm text-slate-600 leading-relaxed">Nothing gets tracked until you accept the plan.</p></div>
+<div class="reveal d3 card p-6 flex flex-col"><span class="font-headline text-4xl font-black text-emerald-600 mb-3">04</span><h4 class="font-headline text-base font-bold mb-2">Evidence builds automatically</h4><p class="text-sm text-slate-600 leading-relaxed">As delivery happens, real evidence (documents, certificates, activity logs) attaches to each criterion. A verified case, not a self-report.</p></div>
+<div class="reveal card p-6 flex flex-col bg-soft border-emerald-600"><span class="font-headline text-4xl font-black text-emerald-600 mb-3">05</span><h4 class="font-headline text-base font-bold mb-2">Export a report anytime</h4><p class="text-sm text-slate-600 leading-relaxed">Every figure in the report expands to show exactly what evidence sits behind it.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ BUSINESS MODEL ═══════════════ -->
+<section id="business-model" class="py-16 md:py-24 bg-soft scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal mb-14 text-center max-w-3xl mx-auto">
+<span class="eyebrow">Business model</span>
+<h2 class="h2">Free for communities. <span class="italic text-emerald-700">Built for the people who build places.</span></h2>
+<p class="lead">Whatever your role in a place, there's a way to work with Train Garden that fits.</p>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+<div id="plan-community" class="reveal scroll-mt-24 card p-8 md:p-10 flex flex-col">
+<span class="tag bg-emerald-600 text-white mb-5">Free, always</span>
+<h3 class="font-headline text-2xl font-extrabold mb-3">Community users</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-6">A free platform for community members to discover what's happening locally and track their own progress.</p>
+<p class="font-headline text-3xl font-black tracking-tight border-y border-slate-200 py-5 mb-6">Permanently free</p>
+<ul class="flex flex-col gap-3 mb-8 text-slate-700">
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Discover local opportunities</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Personalised development pathways matched to real local opportunity</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Track your personal progression towards your goals</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Benefits delivered through development-led social value plans</span></li>
+</ul>
+<p class="text-xs text-slate-500 leading-relaxed mt-auto mb-6">Free because charging the people the platform exists to help would undercut the model.</p>
+<a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20community" target="_blank" rel="noopener noreferrer" class="btn-outline">Talk to us</a>
+</div>
+
+<div class="reveal d1 hero-gradient text-white rounded-3xl p-8 md:p-10 flex flex-col shadow-2xl lg:-my-4 relative">
+<span class="tag bg-white/15 text-white mb-5">Subscription · two tiers</span>
+<h3 class="font-headline text-2xl font-extrabold mb-3">Built environment companies</h3>
+<p class="text-sm text-white/80 leading-relaxed mb-6">Social value evidence that builds itself, from the first bid to the final report.</p>
+<p class="font-headline text-3xl font-black tracking-tight border-y border-white/20 py-5 mb-6">Tier 1 &amp; Tier 2</p>
+<p class="text-[11px] font-bold uppercase tracking-widest text-white mb-3">Tier 1 · Post-tender compliance</p>
+<ul class="flex flex-col gap-3 mb-6">
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Paste your awarded social value commitments, exactly as written</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>A fulfilment plan with concrete solutions and realistic timeframes</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Evidence builds automatically as delivery happens</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Export a report anytime, with every figure expanding to its evidence</span></li>
+</ul>
+<p class="text-[11px] font-bold uppercase tracking-widest text-white mb-3 pt-5 border-t border-white/20">Added in Tier 2 · Pre- and post-tender, end-to-end</p>
+<ul class="flex flex-col gap-3 mb-8">
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Help drafting the proposal for tenders with social value requirements</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Needs assessment guidance for development planning</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Everything in Tier 1, carried through to delivery</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-white text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Hiring fee, discounted for subscribers</span></li>
+</ul>
+<a href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer" class="btn-green mt-auto">Book a demo</a>
+</div>
+
+<div class="reveal d2 card p-8 md:p-10 flex flex-col">
+<span class="tag bg-slate-100 text-slate-700 mb-5">Grant-aligned</span>
+<h3 class="font-headline text-2xl font-extrabold mb-3">Local authorities</h3>
+<p class="text-sm text-slate-600 leading-relaxed mb-6">Priced against the programme's existing grant or department budget, negotiated per programme and not sold as generic SaaS.</p>
+<p class="font-headline text-3xl font-black tracking-tight border-y border-slate-200 py-5 mb-6">Tailored per programme</p>
+<ul class="flex flex-col gap-3 mb-8 text-slate-700">
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Thorough, data-driven needs assessments of your borough, aligned to local plans and social value targets</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Cross-departmental knowledge sharing, and sharing with developers and contractors</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Streamlined social value assessment and contract awards</span></li>
+<li class="flex gap-3 text-sm leading-relaxed"><span class="material-symbols-outlined text-emerald-600 text-[20px] shrink-0 mt-0.5" style='font-variation-settings: "FILL" 1;'>check_circle</span><span>Increased public engagement</span></li>
+</ul>
+<a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20local%20authority" target="_blank" rel="noopener noreferrer" class="btn-outline mt-auto">Talk to us</a>
+</div>
+</div>
+
+<div class="reveal mt-14 card p-8 md:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
 <div>
-<span class="material-symbols-outlined text-4xl mb-6">architecture</span>
-<h3 class="font-headline text-2xl font-bold mb-4">Sustainable Construction</h3>
-<p class="text-on-primary-container text-sm leading-relaxed">Bridge the gap between traditional building and carbon-neutral developments.</p>
+<h3 class="font-headline text-xl md:text-2xl font-extrabold mb-1">Looking for a specific combination?</h3>
+<p class="text-slate-600 text-sm md:text-base">Tell us what you're working on and we'll shape the right package with you.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 shrink-0"><a href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a call</a><a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20enquiry" target="_blank" rel="noopener noreferrer" class="btn-outline">Email us</a></div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ REAL LIFE USE ═══════════════ -->
+<section id="use-cases" class="hero-gradient text-white py-16 md:py-24 scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal mb-12 max-w-3xl">
+<span class="eyebrow eyebrow-light">Real life use</span>
+<h2 class="font-headline text-3xl md:text-5xl font-extrabold tracking-tight leading-[1.1]">Where Train Garden <span class="italic text-white">goes to work</span></h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="reveal bg-white/10 backdrop-blur border border-white/10 rounded-3xl p-8 md:p-10">
+<span class="material-symbols-outlined text-4xl text-white mb-6">account_balance</span>
+<h3 class="font-headline text-2xl font-bold mb-3">Local authorities</h3>
+<p class="text-white/80 leading-relaxed">Strong oversight of new urban development schemes, ensuring projects align with local need, with clear processes for achieving social impact.</p>
+</div>
+<div class="reveal d1 bg-white/10 backdrop-blur border border-white/10 rounded-3xl p-8 md:p-10">
+<span class="material-symbols-outlined text-4xl text-white mb-6">domain</span>
+<h3 class="font-headline text-2xl font-bold mb-3">Urban regeneration</h3>
+<p class="text-white/80 leading-relaxed">Development and regeneration schemes informed by rigorous needs assessments, while tracking, measuring and evidencing the social value generated over time to maximise community buy-in to new projects.</p>
+</div>
+<div class="reveal d2 bg-white/10 backdrop-blur border border-white/10 rounded-3xl p-8 md:p-10">
+<span class="material-symbols-outlined text-4xl text-white mb-6">bolt</span>
+<h3 class="font-headline text-2xl font-bold mb-3">Other potential schemes</h3>
+<p class="text-white/80 leading-relaxed">Platform tools applicable to other projects, from energy projects to community engagement for the charity sector. Development and project impact can be captured, helping people gain confidence and motivating organisations to hire.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ OUR CUSTOMERS ═══════════════ -->
+<section id="customers" class="py-16 md:py-24 bg-surface scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="reveal mb-12 max-w-3xl">
+<span class="eyebrow">Our customers</span>
+<h2 class="h2">Who we serve</h2>
+<p class="lead">What each customer needs, and what they do with Train Garden.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div id="customer-la" class="reveal scroll-mt-24 card card-hover p-8 flex flex-col">
+<div class="icon-box mb-6"><span class="material-symbols-outlined">account_balance</span></div>
+<h3 class="font-headline text-xl font-extrabold mb-5">Local authorities</h3>
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-1">What they need</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-5">Thorough, data-driven needs assessments of their borough, aligned to local plans and social value targets.</p>
+<p class="text-[11px] font-bold uppercase tracking-widest text-emerald-700 mb-1">With Train Garden</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-6">Promote cross-departmental knowledge sharing and share externally with developers and contractors to guide intelligence-based social value.</p>
+<a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20local%20authority" target="_blank" rel="noopener noreferrer" class="mt-auto text-sm font-bold text-emerald-700 inline-flex items-center gap-1 hover:gap-2 transition-all">Talk to us <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<div id="customer-dev" class="reveal d1 scroll-mt-24 card card-hover p-8 flex flex-col">
+<div class="icon-box mb-6"><span class="material-symbols-outlined">apartment</span></div>
+<h3 class="font-headline text-xl font-extrabold mb-5">Property developers &amp; contractors</h3>
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-1">What they need</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-5">Guidance in development planning.</p>
+<p class="text-[11px] font-bold uppercase tracking-widest text-emerald-700 mb-1">With Train Garden</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-6">Use the needs assessment tool as guidance and the user interface to maximise social value, streamline processes and pull KPI data for social value evaluations.</p>
+<a href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer" class="mt-auto text-sm font-bold text-emerald-700 inline-flex items-center gap-1 hover:gap-2 transition-all">Book a demo <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<div id="customer-svp" class="reveal d2 scroll-mt-24 card card-hover p-8 flex flex-col">
+<div class="icon-box mb-6"><span class="material-symbols-outlined">volunteer_activism</span></div>
+<h3 class="font-headline text-xl font-extrabold mb-5">Social value professionals</h3>
+<p class="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-1">What they need</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-5">Ways to promote social value initiatives to users.</p>
+<p class="text-[11px] font-bold uppercase tracking-widest text-emerald-700 mb-1">With Train Garden</p>
+<p class="text-sm text-slate-600 leading-relaxed mb-6">Maximise buy-in and outreach, and track social value goals.</p>
+<a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20enquiry" target="_blank" rel="noopener noreferrer" class="mt-auto text-sm font-bold text-emerald-700 inline-flex items-center gap-1 hover:gap-2 transition-all">Talk to us <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- ═══════════════ ABOUT US ═══════════════ -->
+<section id="about" class="py-16 md:py-24 bg-surface scroll-mt-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="reveal lg:col-span-5">
+<span class="eyebrow">About us</span>
+<h2 class="h2 mb-6">The team behind <span class="italic text-emerald-700">Train Garden</span></h2>
+<p class="text-slate-600 leading-relaxed mb-4">Train Garden brings together local people, local authorities and the companies building our places.</p>
+<p class="text-slate-600 leading-relaxed mb-8">Communities get free, personalised pathways into local opportunity. Authorities get data-led insight into what their area needs. Built environment companies get verified, automated evidence of the social value they deliver.</p>
+<a href="mailto:info@traingarden.co.uk?subject=Train%20Garden%20enquiry" target="_blank" rel="noopener noreferrer" class="btn-outline">Get in touch</a>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="reveal d1 card card-hover p-5 text-center">
+<img alt="Thomas Glen, Co-founder and CEO" class="w-full aspect-square object-cover rounded-2xl mb-5" src="thomas.jpg"/>
+<h3 class="font-headline text-xl font-extrabold">Thomas Glen</h3>
+<p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mt-1 mb-2">Co-founder &amp; CEO</p>
+</div>
+<div class="reveal card card-hover p-5 text-center">
+<img alt="Daryna Vakulenko, Co-founder and CTO" class="w-full aspect-square object-cover rounded-2xl mb-4" src="daryna.jpg"/>
+<h3 class="font-headline text-xl font-extrabold">Daryna Vakulenko</h3>
+<p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mt-1 mb-2">Co-founder &amp; CTO</p>
 </div>
 
 </div>
-<div class="bg-surface-container-highest p-10 rounded-3xl flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 bg-surface-container-lowest rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-tertiary">recycling</span>
-</div>
-<h3 class="font-headline text-2xl font-bold mb-4">Waste Management</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Leading the circular economy transition through innovative waste-to-resource strategies.</p>
-</div>
-<div class="flex -space-x-3 mt-auto">
-<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-200"></div>
-<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-300"></div>
-<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-400"></div>
-<div class="w-10 h-10 rounded-full border-2 border-surface bg-primary-container flex items-center justify-center text-[10px] font-bold">+14</div>
-</div>
-</div>
-<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-3xl border border-primary/5 relative overflow-hidden flex flex-col justify-center">
-<div class="flex flex-col md:flex-row gap-10 items-center">
-<div class="w-full">
-<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold tracking-widest uppercase rounded-full mb-4">New Feature</div>
-<h3 class="font-headline text-2xl font-bold mb-4">Tailored Skills Assessments</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Our proprietary diagnostic tool identifies CV gaps and suggests specific training modules to make you the ideal candidate.</p>
-<a href="tool.html" class="inline-flex items-center gap-2 text-primary font-bold hover:translate-x-2 transition-transform">
-    Try the assessment engine <span class="material-symbols-outlined">trending_flat</span>
-</a>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
-<section class="py-12 md:py-16 bg-surface">
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq" class="py-16 md:py-24 bg-white scroll-mt-16">
+<div class="max-w-4xl mx-auto px-6">
+<div class="reveal mb-10 text-center">
+<span class="eyebrow">Questions</span>
+<h2 class="h2">Quick answers</h2>
+</div>
+<div class="flex flex-col gap-3">
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">Who is Train Garden for?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Community members and organisations, local authorities, property developers and contractors, and social value professionals. One platform connects all four around the local area.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">Is it free to use?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Always for community users. Built environment companies subscribe, and local authorities are priced against the programme's existing grant or department budget.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">What is the difference between Tier 1 and Tier 2?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Tier 1 covers post-tender compliance only. Tier 2 is pre- and post-tender, end-to-end. There is also a hiring fee, discounted for subscribers.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">How is the evidence verified?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">As delivery happens, real evidence such as documents, certificates and activity logs attaches to each criterion. Every figure in the report expands to show what sits behind it, so it is a verified case rather than a self-report.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">How are local authorities priced?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Priced against the programme's existing grant or department budget, negotiated per programme, and not sold as generic SaaS.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">Can it be used beyond urban regeneration?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Yes. The platform tools apply to other projects too, from energy projects to community engagement for the charity sector.</p></details>
+<details class="reveal card px-6 py-5 group"><summary class="flex justify-between items-center gap-4 cursor-pointer font-headline font-bold text-lg">How do I get started?<span class="material-symbols-outlined chev transition-transform text-slate-400">expand_more</span></summary><p class="mt-3 text-slate-600 leading-relaxed">Email <a class="text-emerald-700 font-bold underline" href="mailto:info@traingarden.co.uk">info@traingarden.co.uk</a> or <a class="text-emerald-700 font-bold underline" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">book a 30-minute call</a> and tell us what you're working on. We'll shape the right package with you.</p></details>
+</div>
+</div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="py-16 md:py-24 bg-surface">
 <div class="max-w-5xl mx-auto px-6">
-<div class="bg-primary rounded-[2rem] p-8 md:p-16 text-center text-white">
-<h2 class="text-2xl md:text-4xl font-extrabold mb-4">Ready to plant your future?</h2>
-<p class="text-emerald-100 text-sm md:text-lg mb-8 max-w-xl mx-auto">Join over 5,000 professionals already transitioning into the green economy.</p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<a class="px-8 py-4 bg-tertiary text-white rounded-full font-bold text-md hover:scale-105 transition-all" href="https://forms.gle/TmXsP7VHgy4ivL4q9" rel="noopener noreferrer" target="_blank">Start Your Journey</a>
-<a class="px-8 py-4 bg-transparent border border-white/50 rounded-full font-bold text-md hover:bg-white/10 transition-all" href="mailto:thomas@traingarden.co.uk" rel="noopener noreferrer" target="_blank">Talk to a Coach</a>
+<div class="reveal hero-gradient rounded-[2rem] p-8 md:p-16 text-center text-white relative overflow-hidden">
+<div class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-emerald-600/30 blur-3xl"></div>
+<h2 class="relative font-headline text-3xl md:text-5xl font-black tracking-tight mb-4">Ready to make social value count?</h2>
+<p class="relative text-white text-base md:text-lg mb-8 max-w-xl mx-auto">Partner with us to maximise social value, empower local communities and accelerate locally impactful developments.</p>
+<div class="relative flex flex-col sm:flex-row justify-center gap-4">
+<a class="btn-green" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+<a class="btn border border-white/50 text-white hover:bg-white/10" href="mailto:info@traingarden.co.uk" target="_blank" rel="noopener noreferrer">info@traingarden.co.uk</a>
 </div>
 </div>
 </div>
 </section>
 </main>
-<footer class="w-full py-10 border-t border-gray-100 bg-gray-50">
-<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6 text-center md:text-left">
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="w-full bg-white border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-10">
+<div class="md:col-span-5">
+<img alt="Train Garden Logo" class="h-7 w-auto mb-4" src="logo.png"/>
+<p class="text-sm text-slate-600 max-w-xs leading-relaxed">Building Better Places, Together. Social value that is automated, visual and no longer a tick box.</p>
+</div>
+<div class="md:col-span-4 grid grid-cols-2 gap-6 text-sm">
 <div>
-<div class="mb-2">
+<p class="font-bold mb-3">Explore</p>
+<ul class="flex flex-col gap-2 text-slate-600">
+<li><a class="hover:text-emerald-700" href="#mission">Mission</a></li>
+<li><a class="hover:text-emerald-700" href="#services">Our Services</a></li>
+<li><a class="hover:text-emerald-700" href="#business-model">Business Model</a></li>
+<li><a class="hover:text-emerald-700" href="#use-cases">Real Life Use</a></li>
+</ul>
 </div>
-<p class="text-xs text-slate-500 mt-1">© 2026 Train Garden. Nurturing Professional Excellence.</p>
+<div>
+<p class="font-bold mb-3">Company</p>
+<ul class="flex flex-col gap-2 text-slate-600">
+<li><a class="hover:text-emerald-700" href="#customers">Our Customers</a></li>
+<li><a class="hover:text-emerald-700" href="#about">About Us</a></li>
+<li><a class="hover:text-emerald-700" href="#faq">FAQ</a></li>
+</ul>
 </div>
-<div class="flex gap-4">
-<a href="https://substack.com/@traingarden" rel="noopener noreferrer" target="_blank"><img alt="Substack" class="w-5 h-5 opacity-70 hover:opacity-100" src="substack.png"/></a>
-<a href="https://www.facebook.com/share/1GdjzJ8DuA/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank"><img alt="Facebook" class="w-5 h-5 opacity-70 hover:opacity-100" src="facebook_logo.png"/></a>
 </div>
+<div class="md:col-span-3 text-sm">
+<p class="font-bold mb-3">Contact</p>
+<a class="text-emerald-700 font-bold hover:underline" href="mailto:info@traingarden.co.uk">info@traingarden.co.uk</a>
+<div class="flex gap-4 mt-5">
+<a href="https://substack.com/@traingarden" rel="noopener noreferrer" target="_blank" aria-label="Substack"><img alt="Substack" class="w-5 h-5 opacity-70 hover:opacity-100" src="substack.png"/></a>
+<a href="https://www.facebook.com/share/1GdjzJ8DuA/?mibextid=wwXIfr" rel="noopener noreferrer" target="_blank" aria-label="Facebook"><img alt="Facebook" class="w-5 h-5 opacity-70 hover:opacity-100" src="facebook_logo.png"/></a>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200">
+<p class="max-w-7xl mx-auto px-6 py-5 text-xs text-slate-500">© 2026 Train Garden. Building Better Places, Together.</p>
 </div>
 </footer>
+
+<!-- Mobile sticky call to action -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 p-3">
+<a class="btn-primary w-full" href="https://calendly.com/traingarden-info/30min" target="_blank" rel="noopener noreferrer">Book a Demo</a>
+</div>
+
 <script>
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-
     menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        const open = mobileMenu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', open);
     });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('shadow-md', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => io.observe(el));
+    } else {
+        reveals.forEach(el => el.classList.add('in'));
+    }
+
+    // Highlight current section in the nav
+    const links = [...document.querySelectorAll('.nav-link')];
+    const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+    if ('IntersectionObserver' in window) {
+        const so = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && map.has(e.target.id)) {
+                    links.forEach(l => l.classList.remove('active'));
+                    map.get(e.target.id).classList.add('active');
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        map.forEach((_, id) => { const el = document.getElementById(id); if (el) so.observe(el); });
+    }
 </script>
 </body></html>
